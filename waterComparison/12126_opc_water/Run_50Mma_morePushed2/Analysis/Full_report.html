@@ -1,0 +1,604 @@
+<!DOCTYPE html><html><head><script src="https://3dmol.org/build/3Dmol.js"></script>
+<script type="text/javascript">
+  
+var urlHere = window.location.href;
+if ( urlHere.includes("Membrane-tests") ){
+   var urlPython = urlHere.split("Membrane-tests")[0]+"Membrane-tests/"
+} else if ( urlHere.includes("MD") ){
+  var urlPython = urlHere.split("MD")[0]+"MD/"
+}
+urlPython = urlPython + "Python_Files/webFormat/"
+var head  = document.getElementsByTagName('head')[0];
+    var link  = document.createElement('link');
+
+    link.rel  = 'stylesheet';
+    link.type = 'text/css';
+    link.href = urlPython+'myCss.css';
+    link.media = 'all';
+    head.appendChild(link);
+    
+    let scriptEle = document.createElement("script");
+    scriptEle.setAttribute("src", urlPython+'myFunctions.js');
+    scriptEle.setAttribute("type", 'text/javascript');
+    scriptEle.setAttribute("async", 'false');
+
+    head.appendChild(scriptEle);
+	console.log(urlPython+'myFunctions.js');
+    
+    </script>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head><body><h1>File Path: </h1>waterSlab/12126_opc_water/Run_50Mma_morePushed2 <br>
+<button class="button-37" id="energyClick" onClick="showEnergy()">Energy</button><button class="button-37" id="pressureClick" onClick="showPress()">Pressure</button><button class="button-37" id="allClickShow2" onClick="collapseShowAll('showAll')">Show All</button><button class="button-37" id="allClickHide2" onClick="collapseShowAll('hideAll')" style="display:none">Hide All</button><h2>Number of lipids per leaf: </h2>total=288; DPPC=288; <h2>Sumary all means</h2>
+        <h2>Mean of all steps</h2>
+        <p>File: Run_50Mma_morePushed212126_opc_water</p>
+        <p>Mean all:      37.98+/-      0.35 mN/mnum. files: 35; RollBack: 100</p>
+        <img class="pressClass" src="meanAllStepsMyPress_plotDataMyPress.png" height="100%">
+        <img class="energyClass" src="meanAllStepsMyPress_plotDataMyEnergy.png" height="100%"style="display: none">
+        <button class="button-37" onClick="showPlot('_withErr.csv')">Interactive Plot</button> 
+
+    <button class="button-37" id="energyClick" onClick="showEnergy()">Energy</button><button class="button-37" id="pressureClick" onClick="showPress()">Pressure</button>
+        <div id="summary">
+        <table>
+    <tr>
+        <th>Data File</th>
+        <th>Mean (mN/m)</th>
+
+    </tr>
+        
+    <tr>
+        <td class="files">dppc_12126_opc_prod_01</td>
+        <td>     32.26+/-      9.29</td>
+    </tr>
+    
+    <tr>
+        <td class="files">dppc_12126_opc_prod_02.part0002</td>
+        <td>     33.47+/-      1.87</td>
+    </tr>
+    
+    <tr>
+        <td class="files">dppc_12126_opc_prod_03</td>
+        <td>     34.02+/-      2.03</td>
+    </tr>
+    
+    <tr>
+        <td class="files">dppc_12126_opc_prod_04.part0002</td>
+        <td>     38.66+/-      1.33</td>
+    </tr>
+    
+    <tr>
+        <td class="files">dppc_12126_opc_prod_05.part0003</td>
+        <td>     38.73+/-      1.37</td>
+    </tr>
+    
+    <tr>
+        <td class="files">dppc_12126_opc_prod_06.part0004</td>
+        <td>     35.11+/-      1.46</td>
+    </tr>
+    
+    <tr>
+        <td class="files">dppc_12126_opc_prod_07.part0005</td>
+        <td>     39.81+/-      1.23</td>
+    </tr>
+    
+    <tr>
+        <td class="files">dppc_12126_opc_prod_08.part0006</td>
+        <td>     35.29+/-      1.30</td>
+    </tr>
+    
+    <tr>
+        <td class="files">dppc_12126_opc_prod_09.part0007</td>
+        <td>     38.85+/-      1.27</td>
+    </tr>
+    
+    <tr>
+        <td class="files">dppc_12126_opc_prod_10.part0008</td>
+        <td>     39.28+/-      1.38</td>
+    </tr>
+    
+    <tr>
+        <td class="files">dppc_12126_opc_prod_11.part0009</td>
+        <td>     39.85+/-      1.42</td>
+    </tr>
+    
+    <tr>
+        <td class="files">dppc_12126_opc_prod_12.part0010</td>
+        <td>     41.43+/-      1.27</td>
+    </tr>
+    
+    <tr>
+        <td class="files">dppc_12126_opc_prod_13.part0011</td>
+        <td>     39.27+/-      1.22</td>
+    </tr>
+    
+    <tr>
+        <td class="files">dppc_12126_opc_prod_14.part0012</td>
+        <td>     40.45+/-      1.25</td>
+    </tr>
+    
+    <tr>
+        <td class="files">dppc_12126_opc_prod_15.part0013</td>
+        <td>     37.77+/-      1.22</td>
+    </tr>
+    
+    <tr>
+        <td class="files">dppc_12126_opc_prod_16.part0014</td>
+        <td>     40.41+/-      1.35</td>
+    </tr>
+    
+    <tr>
+        <td class="files">dppc_12126_opc_prod_17.part0015</td>
+        <td>     38.50+/-      1.16</td>
+    </tr>
+    
+    <tr>
+        <td class="files">dppc_12126_opc_prod_18.part0016</td>
+        <td>     39.31+/-      1.15</td>
+    </tr>
+    
+    <tr>
+        <td class="files">dppc_12126_opc_prod_19.part0017</td>
+        <td>     33.49+/-      1.28</td>
+    </tr>
+    
+    <tr>
+        <td class="files">dppc_12126_opc_prod_20.part0018</td>
+        <td>     37.98+/-      1.30</td>
+    </tr>
+    
+    <tr>
+        <td class="files">dppc_12126_opc_prod_21.part0019</td>
+        <td>     41.98+/-      1.33</td>
+    </tr>
+    
+    <tr>
+        <td class="files">dppc_12126_opc_prod_22.part0020</td>
+        <td>     39.69+/-      1.27</td>
+    </tr>
+    
+    <tr>
+        <td class="files">dppc_12126_opc_prod_28.part0026</td>
+        <td>     36.11+/-      1.43</td>
+    </tr>
+    
+    <tr>
+        <td class="files">dppc_12126_opc_prod_29.part0027</td>
+        <td>     34.09+/-      1.36</td>
+    </tr>
+    
+    <tr>
+        <td class="files">dppc_12126_opc_prod_30.part0028</td>
+        <td>     39.09+/-      1.29</td>
+    </tr>
+    
+    <tr>
+        <td class="files">dppc_12126_opc_prod_31.part0029</td>
+        <td>     32.12+/-      1.22</td>
+    </tr>
+    
+    <tr>
+        <td class="files">dppc_12126_opc_prod_32.part0030</td>
+        <td>     34.68+/-      1.29</td>
+    </tr>
+    
+    <tr>
+        <td class="files">dppc_12126_opc_prod_33.part0031</td>
+        <td>     38.72+/-      1.28</td>
+    </tr>
+    
+    <tr>
+        <td class="files">dppc_12126_opc_prod_34.part0032</td>
+        <td>     36.62+/-      1.17</td>
+    </tr>
+    
+    <tr>
+        <td class="files">dppc_12126_opc_prod_35.part0033</td>
+        <td>     41.54+/-      1.25</td>
+    </tr>
+    
+    <tr>
+        <td class="files">dppc_12126_opc_prod_36.part0034</td>
+        <td>     36.20+/-      1.33</td>
+    </tr>
+    
+    <tr>
+        <td class="files">dppc_12126_opc_prod_37.part0035</td>
+        <td>     35.50+/-      1.29</td>
+    </tr>
+    
+    <tr>
+        <td class="files">dppc_12126_opc_prod_38.part0036</td>
+        <td>     37.99+/-      1.25</td>
+    </tr>
+    
+    <tr>
+        <td class="files">dppc_12126_opc_prod_39.part0037</td>
+        <td>     40.60+/-      1.29</td>
+    </tr>
+    
+    <tr>
+        <td class="files">dppc_12126_opc_prod_40.part0038</td>
+        <td>     36.86+/-      1.25</td>
+    </tr>
+    </table></div> 
+            
+            <div id="allPlots">
+                <div id="plotsTitle"></div>
+
+                <img id="allPlotsInner" src="" height="100%" >
+
+               <button class="button-37 molButtons" id="molDownPLot" onClick="plotDown()" > < </button>'
+               <button class="button-37 molButtons" id="molUpPlot" onClick="plotUp()"> > </button>'
+               <button class="button-37 molButtons" id="energyPlot" onClick="plotPress()"> Pressure </button>'
+               <button class="button-37 molButtons" id="energyPlot" onClick="plotEnergy()"> Energy </button>'
+               <button class="button-37 molButtons" id="densityPlot" onClick="plotDens()"> Density </button>'
+               <button class="button-37 molButtons" id="rdfPlot" onClick="plotRDF()"> RDF </button>'
+        
+            </div>
+            <div id='statsAndMol'>
+        <div id="finalStats">
+                <h2> Box final stats </h2>
+                <p>Final Box: 126.04 x 126.04 x 209.07 A</p>
+                <p>Number of Lipids per layer: 288 </p>
+                <p>AreaPerLipid: 55.157 A2/molec </p>
+                </div>
+            <button class="button-37" id="showMol" onClick="showMol()">Molecule</button><div id="molStuff"><button class="button-37 molButtons" id="unshowMol" onClick="hideMol()">Hidde</button><button class="button-37 molButtons" id="molDown" onClick="molDown()" > < </button><button class="button-37 molButtons" id="molUp" onClick="molUp()"> > </button><button class="button-37 molButtons" id="molRun" onClick="runMol()"> Run </button><div id="molName"> </div><div id='gldiv'></div>
+    <p id="molRef">
+    Nicholas Rego and David Koes <br>
+    3Dmol.js: molecular visualization with WebGL <br>
+    Bioinformatics (2015) 31 (8): 1322-1324 doi:10.1093/bioinformatics/btu829 <br>
+    </p>
+    </div></div><div id='fileAccordion'>
+    
+    
+            <button class="button-37 button-collaps" onClick="showAccordeon('dppc_12126_opc_prod_01')" class="collapsible"><h3>&#8226; dppc_12126_opc_prod_01 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="dppc_12126_opc_prod_01">
+            <img class="pressClass" src="dppc_12126_opc_prod_01_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="dppc_12126_opc_prod_01_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="dppc_12126_opc_prod_01_plotDensity.png" class="densityClass" height="100%" width="50%">
+            <button class="button-37" onClick="showPlot('dppc_12126_opc_prod_01')">Interactive Plot</button>
+
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('dppc_12126_opc_prod_02_part0002')" class="collapsible"><h3>&#8226; dppc_12126_opc_prod_02.part0002 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="dppc_12126_opc_prod_02_part0002">
+            <img class="pressClass" src="dppc_12126_opc_prod_02.part0002_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="dppc_12126_opc_prod_02.part0002_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="dppc_12126_opc_prod_02.part0002_plotDensity.png" class="densityClass" height="100%" width="50%">
+            <button class="button-37" onClick="showPlot('dppc_12126_opc_prod_02.part0002')">Interactive Plot</button>
+
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('dppc_12126_opc_prod_03')" class="collapsible"><h3>&#8226; dppc_12126_opc_prod_03 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="dppc_12126_opc_prod_03"><p>HEY! Time has been changed.  500.000 to  1000.000<\p><br>
+            <img class="pressClass" src="dppc_12126_opc_prod_03_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="dppc_12126_opc_prod_03_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="dppc_12126_opc_prod_03_plotDensity.png" class="densityClass" height="100%" width="50%">
+            <button class="button-37" onClick="showPlot('dppc_12126_opc_prod_03')">Interactive Plot</button>
+
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('dppc_12126_opc_prod_04_part0002')" class="collapsible"><h3>&#8226; dppc_12126_opc_prod_04.part0002 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="dppc_12126_opc_prod_04_part0002"><p>HEY! Time has been changed.  1000.000 to  1500.000<\p><br>
+            <img class="pressClass" src="dppc_12126_opc_prod_04.part0002_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="dppc_12126_opc_prod_04.part0002_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="dppc_12126_opc_prod_04.part0002_plotDensity.png" class="densityClass" height="100%" width="50%">
+            <button class="button-37" onClick="showPlot('dppc_12126_opc_prod_04.part0002')">Interactive Plot</button>
+
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('dppc_12126_opc_prod_05_part0003')" class="collapsible"><h3>&#8226; dppc_12126_opc_prod_05.part0003 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="dppc_12126_opc_prod_05_part0003"><p>HEY! Time has been changed.  2000.000 to  2500.000<\p><br>
+            <img class="pressClass" src="dppc_12126_opc_prod_05.part0003_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="dppc_12126_opc_prod_05.part0003_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="dppc_12126_opc_prod_05.part0003_plotDensity.png" class="densityClass" height="100%" width="50%">
+            <button class="button-37" onClick="showPlot('dppc_12126_opc_prod_05.part0003')">Interactive Plot</button>
+
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('dppc_12126_opc_prod_06_part0004')" class="collapsible"><h3>&#8226; dppc_12126_opc_prod_06.part0004 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="dppc_12126_opc_prod_06_part0004"><p>HEY! Time has been changed.  3000.000 to  3500.000<\p><br>
+            <img class="pressClass" src="dppc_12126_opc_prod_06.part0004_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="dppc_12126_opc_prod_06.part0004_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="dppc_12126_opc_prod_06.part0004_plotDensity.png" class="densityClass" height="100%" width="50%">
+            <button class="button-37" onClick="showPlot('dppc_12126_opc_prod_06.part0004')">Interactive Plot</button>
+
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('dppc_12126_opc_prod_07_part0005')" class="collapsible"><h3>&#8226; dppc_12126_opc_prod_07.part0005 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="dppc_12126_opc_prod_07_part0005"><p>HEY! Time has been changed.  4000.000 to  4500.000<\p><br>
+            <img class="pressClass" src="dppc_12126_opc_prod_07.part0005_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="dppc_12126_opc_prod_07.part0005_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="dppc_12126_opc_prod_07.part0005_plotDensity.png" class="densityClass" height="100%" width="50%">
+            <button class="button-37" onClick="showPlot('dppc_12126_opc_prod_07.part0005')">Interactive Plot</button>
+
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('dppc_12126_opc_prod_08_part0006')" class="collapsible"><h3>&#8226; dppc_12126_opc_prod_08.part0006 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="dppc_12126_opc_prod_08_part0006"><p>HEY! Time has been changed.  5000.000 to  5500.000<\p><br>
+            <img class="pressClass" src="dppc_12126_opc_prod_08.part0006_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="dppc_12126_opc_prod_08.part0006_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="dppc_12126_opc_prod_08.part0006_plotDensity.png" class="densityClass" height="100%" width="50%">
+            <button class="button-37" onClick="showPlot('dppc_12126_opc_prod_08.part0006')">Interactive Plot</button>
+
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('dppc_12126_opc_prod_09_part0007')" class="collapsible"><h3>&#8226; dppc_12126_opc_prod_09.part0007 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="dppc_12126_opc_prod_09_part0007"><p>HEY! Time has been changed.  6000.000 to  6500.000<\p><br>
+            <img class="pressClass" src="dppc_12126_opc_prod_09.part0007_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="dppc_12126_opc_prod_09.part0007_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="dppc_12126_opc_prod_09.part0007_plotDensity.png" class="densityClass" height="100%" width="50%">
+            <button class="button-37" onClick="showPlot('dppc_12126_opc_prod_09.part0007')">Interactive Plot</button>
+
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('dppc_12126_opc_prod_10_part0008')" class="collapsible"><h3>&#8226; dppc_12126_opc_prod_10.part0008 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="dppc_12126_opc_prod_10_part0008"><p>HEY! Time has been changed.  7000.000 to  7500.000<\p><br>
+            <img class="pressClass" src="dppc_12126_opc_prod_10.part0008_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="dppc_12126_opc_prod_10.part0008_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="dppc_12126_opc_prod_10.part0008_plotDensity.png" class="densityClass" height="100%" width="50%">
+            <button class="button-37" onClick="showPlot('dppc_12126_opc_prod_10.part0008')">Interactive Plot</button>
+
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('dppc_12126_opc_prod_11_part0009')" class="collapsible"><h3>&#8226; dppc_12126_opc_prod_11.part0009 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="dppc_12126_opc_prod_11_part0009"><p>HEY! Time has been changed.  8000.000 to  8500.000<\p><br>
+            <img class="pressClass" src="dppc_12126_opc_prod_11.part0009_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="dppc_12126_opc_prod_11.part0009_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="dppc_12126_opc_prod_11.part0009_plotDensity.png" class="densityClass" height="100%" width="50%">
+            <button class="button-37" onClick="showPlot('dppc_12126_opc_prod_11.part0009')">Interactive Plot</button>
+
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('dppc_12126_opc_prod_12_part0010')" class="collapsible"><h3>&#8226; dppc_12126_opc_prod_12.part0010 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="dppc_12126_opc_prod_12_part0010"><p>HEY! Time has been changed.  9000.000 to  9500.000<\p><br>
+            <img class="pressClass" src="dppc_12126_opc_prod_12.part0010_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="dppc_12126_opc_prod_12.part0010_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="dppc_12126_opc_prod_12.part0010_plotDensity.png" class="densityClass" height="100%" width="50%">
+            <button class="button-37" onClick="showPlot('dppc_12126_opc_prod_12.part0010')">Interactive Plot</button>
+
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('dppc_12126_opc_prod_13_part0011')" class="collapsible"><h3>&#8226; dppc_12126_opc_prod_13.part0011 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="dppc_12126_opc_prod_13_part0011"><p>HEY! Time has been changed.  10000.000 to  10500.000<\p><br>
+            <img class="pressClass" src="dppc_12126_opc_prod_13.part0011_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="dppc_12126_opc_prod_13.part0011_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="dppc_12126_opc_prod_13.part0011_plotDensity.png" class="densityClass" height="100%" width="50%">
+            <button class="button-37" onClick="showPlot('dppc_12126_opc_prod_13.part0011')">Interactive Plot</button>
+
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('dppc_12126_opc_prod_14_part0012')" class="collapsible"><h3>&#8226; dppc_12126_opc_prod_14.part0012 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="dppc_12126_opc_prod_14_part0012"><p>HEY! Time has been changed.  11000.000 to  11500.000<\p><br>
+            <img class="pressClass" src="dppc_12126_opc_prod_14.part0012_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="dppc_12126_opc_prod_14.part0012_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="dppc_12126_opc_prod_14.part0012_plotDensity.png" class="densityClass" height="100%" width="50%">
+            <button class="button-37" onClick="showPlot('dppc_12126_opc_prod_14.part0012')">Interactive Plot</button>
+
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('dppc_12126_opc_prod_15_part0013')" class="collapsible"><h3>&#8226; dppc_12126_opc_prod_15.part0013 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="dppc_12126_opc_prod_15_part0013"><p>HEY! Time has been changed.  12000.000 to  12500.000<\p><br>
+            <img class="pressClass" src="dppc_12126_opc_prod_15.part0013_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="dppc_12126_opc_prod_15.part0013_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="dppc_12126_opc_prod_15.part0013_plotDensity.png" class="densityClass" height="100%" width="50%">
+            <button class="button-37" onClick="showPlot('dppc_12126_opc_prod_15.part0013')">Interactive Plot</button>
+
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('dppc_12126_opc_prod_16_part0014')" class="collapsible"><h3>&#8226; dppc_12126_opc_prod_16.part0014 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="dppc_12126_opc_prod_16_part0014"><p>HEY! Time has been changed.  13000.000 to  13500.000<\p><br>
+            <img class="pressClass" src="dppc_12126_opc_prod_16.part0014_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="dppc_12126_opc_prod_16.part0014_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="dppc_12126_opc_prod_16.part0014_plotDensity.png" class="densityClass" height="100%" width="50%">
+            <button class="button-37" onClick="showPlot('dppc_12126_opc_prod_16.part0014')">Interactive Plot</button>
+
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('dppc_12126_opc_prod_17_part0015')" class="collapsible"><h3>&#8226; dppc_12126_opc_prod_17.part0015 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="dppc_12126_opc_prod_17_part0015"><p>HEY! Time has been changed.  14000.000 to  14500.000<\p><br>
+            <img class="pressClass" src="dppc_12126_opc_prod_17.part0015_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="dppc_12126_opc_prod_17.part0015_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="dppc_12126_opc_prod_17.part0015_plotDensity.png" class="densityClass" height="100%" width="50%">
+            <button class="button-37" onClick="showPlot('dppc_12126_opc_prod_17.part0015')">Interactive Plot</button>
+
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('dppc_12126_opc_prod_18_part0016')" class="collapsible"><h3>&#8226; dppc_12126_opc_prod_18.part0016 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="dppc_12126_opc_prod_18_part0016"><p>HEY! Time has been changed.  15000.000 to  15500.000<\p><br>
+            <img class="pressClass" src="dppc_12126_opc_prod_18.part0016_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="dppc_12126_opc_prod_18.part0016_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="dppc_12126_opc_prod_18.part0016_plotDensity.png" class="densityClass" height="100%" width="50%">
+            <button class="button-37" onClick="showPlot('dppc_12126_opc_prod_18.part0016')">Interactive Plot</button>
+
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('dppc_12126_opc_prod_19_part0017')" class="collapsible"><h3>&#8226; dppc_12126_opc_prod_19.part0017 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="dppc_12126_opc_prod_19_part0017"><p>HEY! Time has been changed.  16000.000 to  16500.000<\p><br>
+            <img class="pressClass" src="dppc_12126_opc_prod_19.part0017_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="dppc_12126_opc_prod_19.part0017_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="dppc_12126_opc_prod_19.part0017_plotDensity.png" class="densityClass" height="100%" width="50%">
+            <button class="button-37" onClick="showPlot('dppc_12126_opc_prod_19.part0017')">Interactive Plot</button>
+
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('dppc_12126_opc_prod_20_part0018')" class="collapsible"><h3>&#8226; dppc_12126_opc_prod_20.part0018 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="dppc_12126_opc_prod_20_part0018"><p>HEY! Time has been changed.  17000.000 to  17500.000<\p><br>
+            <img class="pressClass" src="dppc_12126_opc_prod_20.part0018_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="dppc_12126_opc_prod_20.part0018_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="dppc_12126_opc_prod_20.part0018_plotDensity.png" class="densityClass" height="100%" width="50%">
+            <button class="button-37" onClick="showPlot('dppc_12126_opc_prod_20.part0018')">Interactive Plot</button>
+
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('dppc_12126_opc_prod_21_part0019')" class="collapsible"><h3>&#8226; dppc_12126_opc_prod_21.part0019 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="dppc_12126_opc_prod_21_part0019"><p>HEY! Time has been changed.  18000.000 to  18500.000<\p><br>
+            <img class="pressClass" src="dppc_12126_opc_prod_21.part0019_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="dppc_12126_opc_prod_21.part0019_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="dppc_12126_opc_prod_21.part0019_plotDensity.png" class="densityClass" height="100%" width="50%">
+            <button class="button-37" onClick="showPlot('dppc_12126_opc_prod_21.part0019')">Interactive Plot</button>
+
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('dppc_12126_opc_prod_22_part0020')" class="collapsible"><h3>&#8226; dppc_12126_opc_prod_22.part0020 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="dppc_12126_opc_prod_22_part0020"><p>HEY! Time has been changed.  19000.000 to  19500.000<\p><br>
+            <img class="pressClass" src="dppc_12126_opc_prod_22.part0020_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="dppc_12126_opc_prod_22.part0020_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="dppc_12126_opc_prod_22.part0020_plotDensity.png" class="densityClass" height="100%" width="50%">
+            <button class="button-37" onClick="showPlot('dppc_12126_opc_prod_22.part0020')">Interactive Plot</button>
+
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('dppc_12126_opc_prod_28_part0026')" class="collapsible"><h3>&#8226; dppc_12126_opc_prod_28.part0026 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="dppc_12126_opc_prod_28_part0026"><p>HEY! Time has been changed.  20000.000 to  25500.000<\p><br>
+            <img class="pressClass" src="dppc_12126_opc_prod_28.part0026_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="dppc_12126_opc_prod_28.part0026_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="dppc_12126_opc_prod_28.part0026_plotDensity.png" class="densityClass" height="100%" width="50%">
+            <button class="button-37" onClick="showPlot('dppc_12126_opc_prod_28.part0026')">Interactive Plot</button>
+
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('dppc_12126_opc_prod_29_part0027')" class="collapsible"><h3>&#8226; dppc_12126_opc_prod_29.part0027 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="dppc_12126_opc_prod_29_part0027"><p>HEY! Time has been changed.  26000.000 to  26500.000<\p><br>
+            <img class="pressClass" src="dppc_12126_opc_prod_29.part0027_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="dppc_12126_opc_prod_29.part0027_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="dppc_12126_opc_prod_29.part0027_plotDensity.png" class="densityClass" height="100%" width="50%">
+            <button class="button-37" onClick="showPlot('dppc_12126_opc_prod_29.part0027')">Interactive Plot</button>
+
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('dppc_12126_opc_prod_30_part0028')" class="collapsible"><h3>&#8226; dppc_12126_opc_prod_30.part0028 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="dppc_12126_opc_prod_30_part0028"><p>HEY! Time has been changed.  27000.000 to  27500.000<\p><br>
+            <img class="pressClass" src="dppc_12126_opc_prod_30.part0028_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="dppc_12126_opc_prod_30.part0028_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="dppc_12126_opc_prod_30.part0028_plotDensity.png" class="densityClass" height="100%" width="50%">
+            <button class="button-37" onClick="showPlot('dppc_12126_opc_prod_30.part0028')">Interactive Plot</button>
+
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('dppc_12126_opc_prod_31_part0029')" class="collapsible"><h3>&#8226; dppc_12126_opc_prod_31.part0029 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="dppc_12126_opc_prod_31_part0029"><p>HEY! Time has been changed.  28000.000 to  28500.000<\p><br>
+            <img class="pressClass" src="dppc_12126_opc_prod_31.part0029_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="dppc_12126_opc_prod_31.part0029_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="dppc_12126_opc_prod_31.part0029_plotDensity.png" class="densityClass" height="100%" width="50%">
+            <button class="button-37" onClick="showPlot('dppc_12126_opc_prod_31.part0029')">Interactive Plot</button>
+
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('dppc_12126_opc_prod_32_part0030')" class="collapsible"><h3>&#8226; dppc_12126_opc_prod_32.part0030 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="dppc_12126_opc_prod_32_part0030"><p>HEY! Time has been changed.  29000.000 to  29500.000<\p><br>
+            <img class="pressClass" src="dppc_12126_opc_prod_32.part0030_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="dppc_12126_opc_prod_32.part0030_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="dppc_12126_opc_prod_32.part0030_plotDensity.png" class="densityClass" height="100%" width="50%">
+            <button class="button-37" onClick="showPlot('dppc_12126_opc_prod_32.part0030')">Interactive Plot</button>
+
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('dppc_12126_opc_prod_33_part0031')" class="collapsible"><h3>&#8226; dppc_12126_opc_prod_33.part0031 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="dppc_12126_opc_prod_33_part0031"><p>HEY! Time has been changed.  30000.000 to  30500.000<\p><br>
+            <img class="pressClass" src="dppc_12126_opc_prod_33.part0031_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="dppc_12126_opc_prod_33.part0031_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="dppc_12126_opc_prod_33.part0031_plotDensity.png" class="densityClass" height="100%" width="50%">
+            <button class="button-37" onClick="showPlot('dppc_12126_opc_prod_33.part0031')">Interactive Plot</button>
+
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('dppc_12126_opc_prod_34_part0032')" class="collapsible"><h3>&#8226; dppc_12126_opc_prod_34.part0032 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="dppc_12126_opc_prod_34_part0032"><p>HEY! Time has been changed.  31000.000 to  31500.000<\p><br>
+            <img class="pressClass" src="dppc_12126_opc_prod_34.part0032_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="dppc_12126_opc_prod_34.part0032_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="dppc_12126_opc_prod_34.part0032_plotDensity.png" class="densityClass" height="100%" width="50%">
+            <button class="button-37" onClick="showPlot('dppc_12126_opc_prod_34.part0032')">Interactive Plot</button>
+
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('dppc_12126_opc_prod_35_part0033')" class="collapsible"><h3>&#8226; dppc_12126_opc_prod_35.part0033 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="dppc_12126_opc_prod_35_part0033"><p>HEY! Time has been changed.  32000.000 to  32500.000<\p><br>
+            <img class="pressClass" src="dppc_12126_opc_prod_35.part0033_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="dppc_12126_opc_prod_35.part0033_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="dppc_12126_opc_prod_35.part0033_plotDensity.png" class="densityClass" height="100%" width="50%">
+            <button class="button-37" onClick="showPlot('dppc_12126_opc_prod_35.part0033')">Interactive Plot</button>
+
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('dppc_12126_opc_prod_36_part0034')" class="collapsible"><h3>&#8226; dppc_12126_opc_prod_36.part0034 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="dppc_12126_opc_prod_36_part0034"><p>HEY! Time has been changed.  33000.000 to  33500.000<\p><br>
+            <img class="pressClass" src="dppc_12126_opc_prod_36.part0034_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="dppc_12126_opc_prod_36.part0034_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="dppc_12126_opc_prod_36.part0034_plotDensity.png" class="densityClass" height="100%" width="50%">
+            <button class="button-37" onClick="showPlot('dppc_12126_opc_prod_36.part0034')">Interactive Plot</button>
+
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('dppc_12126_opc_prod_37_part0035')" class="collapsible"><h3>&#8226; dppc_12126_opc_prod_37.part0035 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="dppc_12126_opc_prod_37_part0035"><p>HEY! Time has been changed.  34000.000 to  34500.000<\p><br>
+            <img class="pressClass" src="dppc_12126_opc_prod_37.part0035_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="dppc_12126_opc_prod_37.part0035_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="dppc_12126_opc_prod_37.part0035_plotDensity.png" class="densityClass" height="100%" width="50%">
+            <button class="button-37" onClick="showPlot('dppc_12126_opc_prod_37.part0035')">Interactive Plot</button>
+
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('dppc_12126_opc_prod_38_part0036')" class="collapsible"><h3>&#8226; dppc_12126_opc_prod_38.part0036 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="dppc_12126_opc_prod_38_part0036"><p>HEY! Time has been changed.  35000.000 to  35500.000<\p><br>
+            <img class="pressClass" src="dppc_12126_opc_prod_38.part0036_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="dppc_12126_opc_prod_38.part0036_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="dppc_12126_opc_prod_38.part0036_plotDensity.png" class="densityClass" height="100%" width="50%">
+            <button class="button-37" onClick="showPlot('dppc_12126_opc_prod_38.part0036')">Interactive Plot</button>
+
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('dppc_12126_opc_prod_39_part0037')" class="collapsible"><h3>&#8226; dppc_12126_opc_prod_39.part0037 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="dppc_12126_opc_prod_39_part0037"><p>HEY! Time has been changed.  36000.000 to  36500.000<\p><br>
+            <img class="pressClass" src="dppc_12126_opc_prod_39.part0037_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="dppc_12126_opc_prod_39.part0037_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="dppc_12126_opc_prod_39.part0037_plotDensity.png" class="densityClass" height="100%" width="50%">
+            <button class="button-37" onClick="showPlot('dppc_12126_opc_prod_39.part0037')">Interactive Plot</button>
+
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('dppc_12126_opc_prod_40_part0038')" class="collapsible"><h3>&#8226; dppc_12126_opc_prod_40.part0038 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="dppc_12126_opc_prod_40_part0038"><p>HEY! Time has been changed.  37000.000 to  37500.000<\p><br>
+            <img class="pressClass" src="dppc_12126_opc_prod_40.part0038_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="dppc_12126_opc_prod_40.part0038_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="dppc_12126_opc_prod_40.part0038_plotDensity.png" class="densityClass" height="100%" width="50%">
+            <button class="button-37" onClick="showPlot('dppc_12126_opc_prod_40.part0038')">Interactive Plot</button>
+
+            </div>
+            
+    </div><!-- End of accordion -->
+    </body></html>

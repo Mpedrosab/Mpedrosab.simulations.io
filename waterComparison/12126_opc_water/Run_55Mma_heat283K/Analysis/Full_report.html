@@ -1,0 +1,390 @@
+<!DOCTYPE html><html><head><style> 
+    table{
+    border-collapse: collapse;
+    /*width: 100%;*/
+    font-size:20px;
+    margin: 30px auto;
+    }
+
+    td, th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+    }
+
+    td img {
+         display:inline-block; 
+         float:center;
+    max-height: 300px
+    }
+
+    .title {
+        display: block;
+
+        text-align: center;
+        font-weight:bold;
+        color: #4CAF50;
+        font-size:25px;
+        max-height: 700px important!;
+
+    }
+    .title img{
+        max-height: 700px important!;
+    }
+
+    tr:nth-child(even){background-color: #f2f2f2;}
+
+    tr:hover {background-color: #ddd;}
+
+    th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #4CAF50;
+    color: white;
+    }
+
+    .densityClass {
+        width: 50%;
+        height: 100%
+    }    
+    
+    .energyClass, .pressClass {
+        display:block;
+        width: 100%;
+        max-width: 1052px;
+        height: 100%
+    }    
+    
+.button-37 {
+    display: inline-block;
+  background-color: #4CAF50;
+  border: 1.5px solid white;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, .1) 0 2px 4px 0;
+  box-sizing: border-box;
+  color: #fff;
+  padding: 2px 10px;
+  text-align: center;
+}
+
+.button-37:hover {
+
+  background-color: #8acc8c;
+}
+
+        
+/*Accordion stuff*/
+    .active, .collapsible {
+        cursor: pointer;
+        background-color: none;
+        display: block;
+    }
+
+  .collapsible:hover {
+  text-decoration: underline;
+   }
+
+.collapsible_content {
+      display: none;
+}
+.button-collaps {
+display: block;
+
+}
+    </style><script type="text/javascript">
+    function showEnergy() {
+  var x = document.getElementsByClassName("energyClass");
+   for (const box of x) {
+        box.style.display = "block";
+        }
+
+    var y = document.getElementsByClassName("pressClass");
+   for (const boxy of y) {
+        boxy.style.display = "none";
+        }
+}
+     function showPress() {
+  var x = document.getElementsByClassName("pressClass");
+   for (const box of x) {
+        box.style.display = "block";
+        }
+    var y = document.getElementsByClassName("energyClass");
+   for (const boxy of y) {
+        boxy.style.display = "none";
+        }
+        }
+
+        /*Accordion stuff*/
+        function showAccordeon(myID) {
+var content = document.getElementById(myID);
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+} 
+
+        function collapseShowAll(myID) {
+            if (myID === "hideAll") {
+             doInBlocks="none"
+             hideBut="allClickHide"
+             showBut="allClickShow"
+                }  
+          if (myID === "showAll") {
+             doInBlocks="block"
+             showBut="allClickHide"
+             hideBut="allClickShow"
+                }
+            
+var allcontent = document.getElementsByClassName("collapsible_content");
+   for (const content of allcontent) {
+       content.style.display = doInBlocks;
+    }
+    var buttonShow = document.getElementById(hideBut);
+   buttonShow.style.display="none";
+    var buttonShow = document.getElementById(showBut);
+   buttonShow.style.display="inline-block";
+} 
+    </script></head><body><h1>File Path: / </h1><button class="button-37" id="energyClick" onClick="showEnergy()">Energy</button><button class="button-37" id="pressureClick" onClick="showPress()">Pressure</button><button class="button-37" id="allClickShow" onClick="collapseShowAll('showAll')">Show All</button><button class="button-37" id="allClickHide" onClick="collapseShowAll('hideAll')" style="display:none">Hide All</button><h2>Number of lipids per leaf: </h2>total=262; DPPC=262; 
+            <button class="button-37 button-collaps" onClick="showAccordeon('dppc_12126_opc_heat283_prod_01')" class="collapsible"><h3>&#8226; dppc_12126_opc_heat283_prod_01 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="dppc_12126_opc_heat283_prod_01">
+            <img class="pressClass" src="dppc_12126_opc_heat283_prod_01_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="dppc_12126_opc_heat283_prod_01_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="dppc_12126_opc_heat283_prod_01_plotDensity.png" class="densityClass" height="100%" width="50%">
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('dppc_12126_opc_heat283_prod_02_part0002')" class="collapsible"><h3>&#8226; dppc_12126_opc_heat283_prod_02.part0002 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="dppc_12126_opc_heat283_prod_02_part0002">
+            <img class="pressClass" src="dppc_12126_opc_heat283_prod_02.part0002_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="dppc_12126_opc_heat283_prod_02.part0002_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="dppc_12126_opc_heat283_prod_02.part0002_plotDensity.png" class="densityClass" height="100%" width="50%">
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('dppc_12126_opc_heat283_prod_03_part0003')" class="collapsible"><h3>&#8226; dppc_12126_opc_heat283_prod_03.part0003 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="dppc_12126_opc_heat283_prod_03_part0003">
+            <img class="pressClass" src="dppc_12126_opc_heat283_prod_03.part0003_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="dppc_12126_opc_heat283_prod_03.part0003_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="dppc_12126_opc_heat283_prod_03.part0003_plotDensity.png" class="densityClass" height="100%" width="50%">
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('dppc_12126_opc_heat283_prod_04_part0004')" class="collapsible"><h3>&#8226; dppc_12126_opc_heat283_prod_04.part0004 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="dppc_12126_opc_heat283_prod_04_part0004">
+            <img class="pressClass" src="dppc_12126_opc_heat283_prod_04.part0004_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="dppc_12126_opc_heat283_prod_04.part0004_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="dppc_12126_opc_heat283_prod_04.part0004_plotDensity.png" class="densityClass" height="100%" width="50%">
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('dppc_12126_opc_heat283_prod_05_part0005')" class="collapsible"><h3>&#8226; dppc_12126_opc_heat283_prod_05.part0005 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="dppc_12126_opc_heat283_prod_05_part0005">
+            <img class="pressClass" src="dppc_12126_opc_heat283_prod_05.part0005_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="dppc_12126_opc_heat283_prod_05.part0005_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="dppc_12126_opc_heat283_prod_05.part0005_plotDensity.png" class="densityClass" height="100%" width="50%">
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('dppc_12126_opc_heat283_prod_06_part0006')" class="collapsible"><h3>&#8226; dppc_12126_opc_heat283_prod_06.part0006 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="dppc_12126_opc_heat283_prod_06_part0006">
+            <img class="pressClass" src="dppc_12126_opc_heat283_prod_06.part0006_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="dppc_12126_opc_heat283_prod_06.part0006_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="dppc_12126_opc_heat283_prod_06.part0006_plotDensity.png" class="densityClass" height="100%" width="50%">
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('dppc_12126_opc_heat283_prod_07_part0007')" class="collapsible"><h3>&#8226; dppc_12126_opc_heat283_prod_07.part0007 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="dppc_12126_opc_heat283_prod_07_part0007">
+            <img class="pressClass" src="dppc_12126_opc_heat283_prod_07.part0007_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="dppc_12126_opc_heat283_prod_07.part0007_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="dppc_12126_opc_heat283_prod_07.part0007_plotDensity.png" class="densityClass" height="100%" width="50%">
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('dppc_12126_opc_heat283_prod_08_part0008')" class="collapsible"><h3>&#8226; dppc_12126_opc_heat283_prod_08.part0008 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="dppc_12126_opc_heat283_prod_08_part0008">
+            <img class="pressClass" src="dppc_12126_opc_heat283_prod_08.part0008_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="dppc_12126_opc_heat283_prod_08.part0008_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="dppc_12126_opc_heat283_prod_08.part0008_plotDensity.png" class="densityClass" height="100%" width="50%">
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('dppc_12126_opc_heat283_prod_09_part0009')" class="collapsible"><h3>&#8226; dppc_12126_opc_heat283_prod_09.part0009 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="dppc_12126_opc_heat283_prod_09_part0009">
+            <img class="pressClass" src="dppc_12126_opc_heat283_prod_09.part0009_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="dppc_12126_opc_heat283_prod_09.part0009_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="dppc_12126_opc_heat283_prod_09.part0009_plotDensity.png" class="densityClass" height="100%" width="50%">
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('dppc_12126_opc_heat283_prod_10_part0010')" class="collapsible"><h3>&#8226; dppc_12126_opc_heat283_prod_10.part0010 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="dppc_12126_opc_heat283_prod_10_part0010">
+            <img class="pressClass" src="dppc_12126_opc_heat283_prod_10.part0010_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="dppc_12126_opc_heat283_prod_10.part0010_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="dppc_12126_opc_heat283_prod_10.part0010_plotDensity.png" class="densityClass" height="100%" width="50%">
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('dppc_12126_opc_heat283_prod_11_part0011')" class="collapsible"><h3>&#8226; dppc_12126_opc_heat283_prod_11.part0011 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="dppc_12126_opc_heat283_prod_11_part0011">
+            <img class="pressClass" src="dppc_12126_opc_heat283_prod_11.part0011_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="dppc_12126_opc_heat283_prod_11.part0011_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="dppc_12126_opc_heat283_prod_11.part0011_plotDensity.png" class="densityClass" height="100%" width="50%">
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('dppc_12126_opc_heat283_prod_12_part0012')" class="collapsible"><h3>&#8226; dppc_12126_opc_heat283_prod_12.part0012 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="dppc_12126_opc_heat283_prod_12_part0012">
+            <img class="pressClass" src="dppc_12126_opc_heat283_prod_12.part0012_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="dppc_12126_opc_heat283_prod_12.part0012_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="dppc_12126_opc_heat283_prod_12.part0012_plotDensity.png" class="densityClass" height="100%" width="50%">
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('dppc_12126_opc_heat283_prod_13_part0013')" class="collapsible"><h3>&#8226; dppc_12126_opc_heat283_prod_13.part0013 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="dppc_12126_opc_heat283_prod_13_part0013">
+            <img class="pressClass" src="dppc_12126_opc_heat283_prod_13.part0013_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="dppc_12126_opc_heat283_prod_13.part0013_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="dppc_12126_opc_heat283_prod_13.part0013_plotDensity.png" class="densityClass" height="100%" width="50%">
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('dppc_12126_opc_heat283_prod_14_part0014')" class="collapsible"><h3>&#8226; dppc_12126_opc_heat283_prod_14.part0014 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="dppc_12126_opc_heat283_prod_14_part0014">
+            <img class="pressClass" src="dppc_12126_opc_heat283_prod_14.part0014_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="dppc_12126_opc_heat283_prod_14.part0014_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="dppc_12126_opc_heat283_prod_14.part0014_plotDensity.png" class="densityClass" height="100%" width="50%">
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('dppc_12126_opc_heat283_prod_15_part0015')" class="collapsible"><h3>&#8226; dppc_12126_opc_heat283_prod_15.part0015 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="dppc_12126_opc_heat283_prod_15_part0015">
+            <img class="pressClass" src="dppc_12126_opc_heat283_prod_15.part0015_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="dppc_12126_opc_heat283_prod_15.part0015_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="dppc_12126_opc_heat283_prod_15.part0015_plotDensity.png" class="densityClass" height="100%" width="50%">
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('dppc_12126_opc_heat283_prod_16_part0016')" class="collapsible"><h3>&#8226; dppc_12126_opc_heat283_prod_16.part0016 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="dppc_12126_opc_heat283_prod_16_part0016">
+            <img class="pressClass" src="dppc_12126_opc_heat283_prod_16.part0016_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="dppc_12126_opc_heat283_prod_16.part0016_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="dppc_12126_opc_heat283_prod_16.part0016_plotDensity.png" class="densityClass" height="100%" width="50%">
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('dppc_12126_opc_heat283_prod_17_part0017')" class="collapsible"><h3>&#8226; dppc_12126_opc_heat283_prod_17.part0017 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="dppc_12126_opc_heat283_prod_17_part0017">
+            <img class="pressClass" src="dppc_12126_opc_heat283_prod_17.part0017_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="dppc_12126_opc_heat283_prod_17.part0017_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="dppc_12126_opc_heat283_prod_17.part0017_plotDensity.png" class="densityClass" height="100%" width="50%">
+            </div>
+            <h2>Sumary all means</h2>
+        
+        <table>
+    <tr>
+        <th>Data File</th>
+        <th>Mean (mN/m)</th>
+
+    </tr>
+
+        
+    <tr>
+        <td>dppc_12126_opc_heat283_prod_01</td>
+        <td>     50.14+/-      5.38</td>
+    </tr>
+    
+    <tr>
+        <td>dppc_12126_opc_heat283_prod_02.part0002</td>
+        <td>     78.04+/-      5.73</td>
+    </tr>
+    
+    <tr>
+        <td>dppc_12126_opc_heat283_prod_03.part0003</td>
+        <td>     58.95+/-      5.90</td>
+    </tr>
+    
+    <tr>
+        <td>dppc_12126_opc_heat283_prod_04.part0004</td>
+        <td>     48.22+/-      5.41</td>
+    </tr>
+    
+    <tr>
+        <td>dppc_12126_opc_heat283_prod_05.part0005</td>
+        <td>     63.13+/-      5.56</td>
+    </tr>
+    
+    <tr>
+        <td>dppc_12126_opc_heat283_prod_06.part0006</td>
+        <td>     53.31+/-      5.35</td>
+    </tr>
+    
+    <tr>
+        <td>dppc_12126_opc_heat283_prod_07.part0007</td>
+        <td>     41.80+/-      5.40</td>
+    </tr>
+    
+    <tr>
+        <td>dppc_12126_opc_heat283_prod_08.part0008</td>
+        <td>     57.96+/-      5.78</td>
+    </tr>
+    
+    <tr>
+        <td>dppc_12126_opc_heat283_prod_09.part0009</td>
+        <td>     64.61+/-      5.77</td>
+    </tr>
+    
+    <tr>
+        <td>dppc_12126_opc_heat283_prod_10.part0010</td>
+        <td>     48.98+/-      5.47</td>
+    </tr>
+    
+    <tr>
+        <td>dppc_12126_opc_heat283_prod_11.part0011</td>
+        <td>     58.60+/-      6.22</td>
+    </tr>
+    
+    <tr>
+        <td>dppc_12126_opc_heat283_prod_12.part0012</td>
+        <td>     26.06+/-      5.63</td>
+    </tr>
+    
+    <tr>
+        <td>dppc_12126_opc_heat283_prod_13.part0013</td>
+        <td>     42.29+/-      5.43</td>
+    </tr>
+    
+    <tr>
+        <td>dppc_12126_opc_heat283_prod_14.part0014</td>
+        <td>     53.30+/-      5.23</td>
+    </tr>
+    
+    <tr>
+        <td>dppc_12126_opc_heat283_prod_15.part0015</td>
+        <td>     57.68+/-      5.35</td>
+    </tr>
+    
+    <tr>
+        <td>dppc_12126_opc_heat283_prod_16.part0016</td>
+        <td>     48.78+/-      5.74</td>
+    </tr>
+    
+    <tr>
+        <td>dppc_12126_opc_heat283_prod_17.part0017</td>
+        <td>     58.54+/-      5.36</td>
+    </tr>
+    </table> 
+        <h2>Mean of all steps</h2>
+        <p>File: </p>
+        <p>Mean all:      51.02+/-      0.36 mN/m; RollBack: 500</p>
+        <img class="pressClass" src="meanAllStepsMyPress_plotDataMyPress.png" height="100%">
+        <img class="energyClass" src="meanAllStepsMyPress_plotDataMyEnergy.png" height="100%"style="display: none">
+    <button class="button-37" id="energyClick" onClick="showEnergy()">Energy</button><button class="button-37" id="pressureClick" onClick="showPress()">Pressure</button><button class="button-37" id="allClickShow" onClick="collapseShowAll('showAll')">Show All</button><button class="button-37" id="allClickHide" onClick="collapseShowAll('hideAll')" style="display:none">Hide All</button>
+                <h2> Box final stats </h2>
+                <p>Final Box: 126.04 x 126.04 x 209.07 A</p>
+                <p>Number of Lipids per layer: 262 </p>
+                <p>AreaPerLipid: 60.630 A2/molec </p>
+            </body></html>

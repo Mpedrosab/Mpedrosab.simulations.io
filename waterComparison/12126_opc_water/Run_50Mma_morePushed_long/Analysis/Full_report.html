@@ -1,0 +1,94 @@
+<!DOCTYPE html><html><head><script src="https://3dmol.org/build/3Dmol.js"></script>
+<script type="text/javascript">
+  
+var urlHere = window.location.href;
+if ( urlHere.includes("Membrane-tests") ){
+   var urlPython = urlHere.split("Membrane-tests")[0]+"Membrane-tests/"
+} else if ( urlHere.includes("MD") ){
+  var urlPython = urlHere.split("MD")[0]+"MD/"
+}
+urlPython = urlPython + "Python_Files/webFormat/"
+var head  = document.getElementsByTagName('head')[0];
+    var link  = document.createElement('link');
+
+    link.rel  = 'stylesheet';
+    link.type = 'text/css';
+    link.href = urlPython+'myCss.css';
+    link.media = 'all';
+    head.appendChild(link);
+    
+    let scriptEle = document.createElement("script");
+    scriptEle.setAttribute("src", urlPython+'myFunctions.js');
+    scriptEle.setAttribute("type", 'text/javascript');
+    scriptEle.setAttribute("async", 'false');
+
+    head.appendChild(scriptEle);
+	console.log(urlPython+'myFunctions.js');
+    
+    </script>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head><body><h1>File Path: </h1>waterSlab/12126_opc_water/Run_50Mma_morePushed_long <br>
+<button class="button-37" id="energyClick" onClick="showEnergy()">Energy</button><button class="button-37" id="pressureClick" onClick="showPress()">Pressure</button><button class="button-37" id="allClickShow2" onClick="collapseShowAll('showAll')">Show All</button><button class="button-37" id="allClickHide2" onClick="collapseShowAll('hideAll')" style="display:none">Hide All</button><h2>Number of lipids per leaf: </h2>total=288; DPPC=288; <h2>Sumary all means</h2>
+        <h2>Mean of all steps</h2>
+        <p>File: Run_50Mma_morePushed_long12126_opc_water</p>
+        <p>Mean all:      34.81+/-      0.42 mN/mnum. files: 2; RollBack: 100</p>
+        <img class="pressClass" src="meanAllStepsMyPress_plotDataMyPress.png" height="100%">
+        <img class="energyClass" src="meanAllStepsMyPress_plotDataMyEnergy.png" height="100%"style="display: none">
+        <button class="button-37" onClick="showPlot('_withErr.csv')">Interactive Plot</button> 
+
+    <button class="button-37" id="energyClick" onClick="showEnergy()">Energy</button><button class="button-37" id="pressureClick" onClick="showPress()">Pressure</button>
+        <div id="summary">
+        <table>
+    <tr>
+        <th>Data File</th>
+        <th>Mean (mN/m)</th>
+
+    </tr>
+        
+    <tr>
+        <td class="files">dppc_12126_opc_prod_Long_01</td>
+        <td>     22.84+/-      9.05</td>
+    </tr>
+    
+    <tr>
+        <td class="files">dppc_12126_opc_prod_Long_02.part0002</td>
+        <td>     34.81+/-      0.90</td>
+    </tr>
+    </table></div> <div id='statsAndMol'>
+        <div id="finalStats">
+                <h2> Box final stats </h2>
+                <p>Final Box: 126.04 x 126.04 x 209.07 A</p>
+                <p>Number of Lipids per layer: 288 </p>
+                <p>AreaPerLipid: 55.157 A2/molec </p>
+                </div>
+            <button class="button-37" id="showMol" onClick="showMol()">Molecule</button><div id="molStuff"><button class="button-37 molButtons" id="unshowMol" onClick="hideMol()">Hidde</button><button class="button-37 molButtons" id="molDown" onClick="molDown()" > < </button><button class="button-37 molButtons" id="molUp" onClick="molUp()"> > </button><button class="button-37 molButtons" id="molRun" onClick="runMol()"> Run </button><div id="molName"> </div><div id='gldiv'></div>
+    <p id="molRef">
+    Nicholas Rego and David Koes <br>
+    3Dmol.js: molecular visualization with WebGL <br>
+    Bioinformatics (2015) 31 (8): 1322-1324 doi:10.1093/bioinformatics/btu829 <br>
+    </p>
+    </div></div><div id='fileAccordion'>
+    
+    
+            <button class="button-37 button-collaps" onClick="showAccordeon('dppc_12126_opc_prod_Long_01')" class="collapsible"><h3>&#8226; dppc_12126_opc_prod_Long_01 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="dppc_12126_opc_prod_Long_01">
+            <img class="pressClass" src="dppc_12126_opc_prod_Long_01_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="dppc_12126_opc_prod_Long_01_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="dppc_12126_opc_prod_Long_01_plotDensity.png" class="densityClass" height="100%" width="50%">
+            <button class="button-37" onClick="showPlot('dppc_12126_opc_prod_Long_01')">Interactive Plot</button>
+
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('dppc_12126_opc_prod_Long_02_part0002')" class="collapsible"><h3>&#8226; dppc_12126_opc_prod_Long_02.part0002 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="dppc_12126_opc_prod_Long_02_part0002"><p>HEY! Time has been changed.  250.000 to  500.000<\p><br>
+            <img class="pressClass" src="dppc_12126_opc_prod_Long_02.part0002_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="dppc_12126_opc_prod_Long_02.part0002_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="dppc_12126_opc_prod_Long_02.part0002_plotDensity.png" class="densityClass" height="100%" width="50%">
+            <button class="button-37" onClick="showPlot('dppc_12126_opc_prod_Long_02.part0002')">Interactive Plot</button>
+
+            </div>
+            
+    </div><!-- End of accordion -->
+    </body></html>

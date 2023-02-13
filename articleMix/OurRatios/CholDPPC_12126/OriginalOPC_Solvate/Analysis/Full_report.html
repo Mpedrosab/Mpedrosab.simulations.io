@@ -1,0 +1,214 @@
+<!DOCTYPE html><html><head><script src="https://3dmol.org/build/3Dmol.js"></script>
+<script type="text/javascript">
+  
+var urlHere = window.location.href;
+if ( urlHere.includes("Membrane-tests") ){
+   var urlPython = urlHere.split("Membrane-tests")[0]+"Membrane-tests/"
+} else if ( urlHere.includes("MD") ){
+  var urlPython = urlHere.split("MD")[0]+"MD/"
+}
+urlPython = urlPython + "Python_Files/webFormat/"
+var head  = document.getElementsByTagName('head')[0];
+    var link  = document.createElement('link');
+
+    link.rel  = 'stylesheet';
+    link.type = 'text/css';
+    link.href = urlPython+'myCss.css';
+    link.media = 'all';
+    head.appendChild(link);
+    
+    let scriptEle = document.createElement("script");
+    scriptEle.setAttribute("src", urlPython+'myFunctions.js');
+    scriptEle.setAttribute("type", 'text/javascript');
+    scriptEle.setAttribute("async", 'false');
+
+    head.appendChild(scriptEle);
+	console.log(urlPython+'myFunctions.js');
+    
+    </script>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head><body><h1>File Path: </h1>OurRatios/CholDPPC_12126/OriginalOPC_Solvate <br>
+<button class="button-37" id="energyClick" onClick="showEnergy()">Energy</button><button class="button-37" id="pressureClick" onClick="showPress()">Pressure</button><button class="button-37" id="allClickShow2" onClick="collapseShowAll('showAll')">Show All</button><button class="button-37" id="allClickHide2" onClick="collapseShowAll('hideAll')" style="display:none">Hide All</button><h2>Number of lipids per leaf: </h2>total=360; CHL1=241; DPPC=119; <h2>Sumary all means</h2>
+        <h2>Mean of all steps</h2>
+        <p>File: OriginalOPC_SolvateCholDPPC_12126</p>
+        <p>Mean all:      91.59+/-      0.69 mN/mnum. files: 9; RollBack: 100</p>
+        <img class="pressClass" src="meanAllStepsMyPress_plotDataMyPress.png" height="100%">
+        <img class="energyClass" src="meanAllStepsMyPress_plotDataMyEnergy.png" height="100%"style="display: none">
+        <button class="button-37" onClick="showPlot('_withErr.csv')">Interactive Plot</button> 
+
+    <button class="button-37" id="energyClick" onClick="showEnergy()">Energy</button><button class="button-37" id="pressureClick" onClick="showPress()">Pressure</button>
+        <div id="summary">
+        <table>
+    <tr>
+        <th>Data File</th>
+        <th>Mean (mN/m)</th>
+
+    </tr>
+        
+    <tr>
+        <td class="files">step7_01</td>
+        <td>     91.37+/-      1.28</td>
+    </tr>
+    
+    <tr>
+        <td class="files">step7_02.part0002</td>
+        <td>     93.95+/-      0.42</td>
+    </tr>
+    
+    <tr>
+        <td class="files">step7_03.part0003</td>
+        <td>     94.40+/-      0.40</td>
+    </tr>
+    
+    <tr>
+        <td class="files">step7_04.part0004</td>
+        <td>     94.61+/-      0.95</td>
+    </tr>
+    
+    <tr>
+        <td class="files">step7_05.part0005</td>
+        <td>     92.37+/-      0.99</td>
+    </tr>
+    
+    <tr>
+        <td class="files">step7_06.part0006</td>
+        <td>     90.33+/-      0.94</td>
+    </tr>
+    
+    <tr>
+        <td class="files">step7_07.part0007</td>
+        <td>     93.51+/-      0.91</td>
+    </tr>
+    
+    <tr>
+        <td class="files">step7_08.part0008</td>
+        <td>     90.07+/-      0.93</td>
+    </tr>
+    
+    <tr>
+        <td class="files">step7_09.part0009</td>
+        <td>     91.72+/-      0.92</td>
+    </tr>
+    </table></div> 
+            
+            <div id="allPlots">
+                <div id="plotsTitle"></div>
+
+                <img id="allPlotsInner" src="" height="100%" >
+
+               <button class="button-37 molButtons" id="molDownPLot" onClick="plotDown()" > < </button>'
+               <button class="button-37 molButtons" id="molUpPlot" onClick="plotUp()"> > </button>'
+               <button class="button-37 molButtons" id="energyPlot" onClick="plotPress()"> Pressure </button>'
+               <button class="button-37 molButtons" id="energyPlot" onClick="plotEnergy()"> Energy </button>'
+               <button class="button-37 molButtons" id="densityPlot" onClick="plotDens()"> Density </button>'
+               <button class="button-37 molButtons" id="rdfPlot" onClick="plotRDF()"> RDF </button>'
+        
+            </div>
+            <div id='statsAndMol'>
+        <div id="finalStats">
+                <h2> Box final stats </h2>
+                <p>Final Box: 127.31 x 127.31 x 299.90 A</p>
+                <p>Number of Lipids per layer: 360 </p>
+                <p>AreaPerLipid: 45.022 A2/molec </p>
+                </div>
+            <button class="button-37" id="showMol" onClick="showMol()">Molecule</button><div id="molStuff"><button class="button-37 molButtons" id="unshowMol" onClick="hideMol()">Hidde</button><button class="button-37 molButtons" id="molDown" onClick="molDown()" > < </button><button class="button-37 molButtons" id="molUp" onClick="molUp()"> > </button><button class="button-37 molButtons" id="molRun" onClick="runMol()"> Run </button><div id="molName"> </div><div id='gldiv'></div>
+    <p id="molRef">
+    Nicholas Rego and David Koes <br>
+    3Dmol.js: molecular visualization with WebGL <br>
+    Bioinformatics (2015) 31 (8): 1322-1324 doi:10.1093/bioinformatics/btu829 <br>
+    </p>
+    </div></div><div id='fileAccordion'>
+    
+    
+            <button class="button-37 button-collaps" onClick="showAccordeon('step7_01')" class="collapsible"><h3>&#8226; step7_01 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="step7_01">
+            <img class="pressClass" src="step7_01_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="step7_01_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="step7_01_plotDensity.png" class="densityClass" height="100%" width="50%">
+            <button class="button-37" onClick="showPlot('step7_01')">Interactive Plot</button>
+
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('step7_02_part0002')" class="collapsible"><h3>&#8226; step7_02.part0002 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="step7_02_part0002">
+            <img class="pressClass" src="step7_02.part0002_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="step7_02.part0002_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="step7_02.part0002_plotDensity.png" class="densityClass" height="100%" width="50%">
+            <button class="button-37" onClick="showPlot('step7_02.part0002')">Interactive Plot</button>
+
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('step7_03_part0003')" class="collapsible"><h3>&#8226; step7_03.part0003 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="step7_03_part0003">
+            <img class="pressClass" src="step7_03.part0003_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="step7_03.part0003_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="step7_03.part0003_plotDensity.png" class="densityClass" height="100%" width="50%">
+            <button class="button-37" onClick="showPlot('step7_03.part0003')">Interactive Plot</button>
+
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('step7_04_part0004')" class="collapsible"><h3>&#8226; step7_04.part0004 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="step7_04_part0004">
+            <img class="pressClass" src="step7_04.part0004_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="step7_04.part0004_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="step7_04.part0004_plotDensity.png" class="densityClass" height="100%" width="50%">
+            <button class="button-37" onClick="showPlot('step7_04.part0004')">Interactive Plot</button>
+
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('step7_05_part0005')" class="collapsible"><h3>&#8226; step7_05.part0005 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="step7_05_part0005">
+            <img class="pressClass" src="step7_05.part0005_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="step7_05.part0005_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="step7_05.part0005_plotDensity.png" class="densityClass" height="100%" width="50%">
+            <button class="button-37" onClick="showPlot('step7_05.part0005')">Interactive Plot</button>
+
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('step7_06_part0006')" class="collapsible"><h3>&#8226; step7_06.part0006 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="step7_06_part0006">
+            <img class="pressClass" src="step7_06.part0006_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="step7_06.part0006_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="step7_06.part0006_plotDensity.png" class="densityClass" height="100%" width="50%">
+            <button class="button-37" onClick="showPlot('step7_06.part0006')">Interactive Plot</button>
+
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('step7_07_part0007')" class="collapsible"><h3>&#8226; step7_07.part0007 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="step7_07_part0007">
+            <img class="pressClass" src="step7_07.part0007_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="step7_07.part0007_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="step7_07.part0007_plotDensity.png" class="densityClass" height="100%" width="50%">
+            <button class="button-37" onClick="showPlot('step7_07.part0007')">Interactive Plot</button>
+
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('step7_08_part0008')" class="collapsible"><h3>&#8226; step7_08.part0008 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="step7_08_part0008">
+            <img class="pressClass" src="step7_08.part0008_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="step7_08.part0008_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="step7_08.part0008_plotDensity.png" class="densityClass" height="100%" width="50%">
+            <button class="button-37" onClick="showPlot('step7_08.part0008')">Interactive Plot</button>
+
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('step7_09_part0009')" class="collapsible"><h3>&#8226; step7_09.part0009 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="step7_09_part0009">
+            <img class="pressClass" src="step7_09.part0009_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="step7_09.part0009_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="step7_09.part0009_plotDensity.png" class="densityClass" height="100%" width="50%">
+            <button class="button-37" onClick="showPlot('step7_09.part0009')">Interactive Plot</button>
+
+            </div>
+            
+    </div><!-- End of accordion -->
+    </body></html>

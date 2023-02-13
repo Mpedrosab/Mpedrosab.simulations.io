@@ -1,0 +1,391 @@
+<!DOCTYPE html><html><head><style> 
+    table{
+    border-collapse: collapse;
+    /*width: 100%;*/
+    font-size:20px;
+    margin: 30px auto;
+    }
+
+    td, th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+    }
+
+    td img {
+         display:inline-block; 
+         float:center;
+    max-height: 300px
+    }
+
+    .title {
+        display: block;
+
+        text-align: center;
+        font-weight:bold;
+        color: #4CAF50;
+        font-size:25px;
+        max-height: 700px important!;
+
+    }
+    .title img{
+        max-height: 700px important!;
+    }
+
+    tr:nth-child(even){background-color: #f2f2f2;}
+
+    tr:hover {background-color: #ddd;}
+
+    th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #4CAF50;
+    color: white;
+    }
+
+    .densityClass {
+        width: 50%;
+        height: 100%
+    }    
+    
+    .energyClass, .pressClass {
+        display:block;
+        width: 100%;
+        max-width: 1052px;
+        height: 100%
+    }    
+    
+.button-37 {
+    display: inline-block;
+  background-color: #4CAF50;
+  border: 1.5px solid white;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, .1) 0 2px 4px 0;
+  box-sizing: border-box;
+  color: #fff;
+  padding: 2px 10px;
+  text-align: center;
+}
+
+.button-37:hover {
+
+  background-color: #8acc8c;
+}
+
+        
+/*Accordion stuff*/
+    .active, .collapsible {
+        cursor: pointer;
+        background-color: none;
+        display: block;
+    }
+
+  .collapsible:hover {
+  text-decoration: underline;
+   }
+
+.collapsible_content {
+      display: none;
+}
+.button-collaps {
+display: block;
+margin-bottom: 5px;
+
+}
+    </style><script type="text/javascript">
+    function showEnergy() {
+  var x = document.getElementsByClassName("energyClass");
+   for (const box of x) {
+        box.style.display = "block";
+        }
+
+    var y = document.getElementsByClassName("pressClass");
+   for (const boxy of y) {
+        boxy.style.display = "none";
+        }
+}
+     function showPress() {
+  var x = document.getElementsByClassName("pressClass");
+   for (const box of x) {
+        box.style.display = "block";
+        }
+    var y = document.getElementsByClassName("energyClass");
+   for (const boxy of y) {
+        boxy.style.display = "none";
+        }
+        }
+
+    
+        var textFile = null;
+        
+ function makeTextFile(myPath,fileToPlot) {
+ 
+ 
+        var text=`
+from os import listdir
+import pandas as pd
+import matplotlib.pyplot as plt
+from numpy import array
+#Read file
+try:
+    myPath="whatPath"
+    if myPath[0]=="/":
+        myPath=myPath[1:]
+    param="SurfTensionFromGROMACSout_[mN/m]"
+    allFiles=[f for f in listdir(myPath) if "myFileToFind" in f and "_withErr.csv" in f]
+    
+    allFiles.sort()
+    allDataMean=pd.DataFrame([])
+    fig,ax=plt.subplots()
+    for file in allFiles:
+        print(file)
+        data=pd.read_csv(myPath+file)
+        
+        allDataMean=allDataMean.append(data)
+    
+        ax.axvline(x=data[data.columns[1]].iloc[-1], ls='--', label=file.replace("_withErr.csv","").split("_")[-1].split(".")[0])
+    
+    allDataMean.rename(columns={ allDataMean.columns[1]: "Time_[ps]" }, inplace = True)
+    ax.plot(allDataMean["Time_[ps]"],allDataMean[param],"-o",c="blue", ms=4)
+
+    fig.show()
+    input("Finish")
+except Exception as error:
+    print(error)
+    print("Error may be cause due to missing data file. Try to download correspondent csv")
+    input("Press any key to exit.")
+`;
+
+
+
+text=text.replace("whatPath", myPath).replace("myFileToFind",fileToPlot)
+         var data = new Blob([text], {type: 'text/plain'});
+         var textFile = window.URL.createObjectURL(data);
+             if (textFile !== null) {
+      window.URL.revokeObjectURL(textFile);
+    }
+
+    textFile = window.URL.createObjectURL(data);
+
+    return textFile;
+        
+      
+ }
+        function showPlot(myFile) {
+        
+        var link = document.createElement('a');
+        var loc = window.location.pathname;
+var dir = loc.substring(0, loc.lastIndexOf('/'))+'/';
+dir=dir.replaceAll('\D:',"D:").replaceAll('\\','/').replaceAll('replaceThis',"").replace('/home/mpedrosab/MD/','D:/Documentos_D/Google_Drive_UGR/Membrane-tests').replaceAll('/D:',"D:")
+    
+    link.setAttribute('download', 'showPlot.py');
+    link.setAttribute('style', 'display:"none"');
+    console.log(dir)
+    link.href = makeTextFile(dir,myFile);
+    document.body.appendChild(link);
+    
+        // wait for the link to be added to the document
+    window.requestAnimationFrame(function () {
+      var event = new MouseEvent('click');
+      link.dispatchEvent(event);
+      document.body.removeChild(link);
+    });
+  
+        }
+
+
+
+        /*Accordion stuff*/
+        function showAccordeon(myID) {
+var content = document.getElementById(myID);
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+} 
+
+        function collapseShowAll(myID) {
+            if (myID === "hideAll") {
+             doInBlocks="none"
+             hideBut="allClickHide"
+             showBut="allClickShow"
+                }  
+          if (myID === "showAll") {
+             doInBlocks="block"
+             showBut="allClickHide"
+             hideBut="allClickShow"
+                }
+            
+var allcontent = document.getElementsByClassName("collapsible_content");
+   for (const content of allcontent) {
+       content.style.display = doInBlocks;
+    }
+    var buttonShow = document.getElementById(hideBut);
+   buttonShow.style.display="none";
+    var buttonShow = document.getElementById(showBut);
+   buttonShow.style.display="inline-block";  
+  var buttonShow = document.getElementById(hideBut+"2");
+   buttonShow.style.display="none";
+    var buttonShow = document.getElementById(showBut+"2");
+   buttonShow.style.display="inline-block";
+} 
+    </script></head><body><h1>File Path: Cur_Trials/ketoMine/Run_stand_few </h1><button class="button-37" id="energyClick" onClick="showEnergy()">Energy</button><button class="button-37" id="pressureClick" onClick="showPress()">Pressure</button><button class="button-37" id="allClickShow" onClick="collapseShowAll('showAll')">Show All</button><button class="button-37" id="allClickHide" onClick="collapseShowAll('hideAll')" style="display:none">Hide All</button><h2>Number of lipids per leaf: </h2>total=40; LIG=40; 
+            <button class="button-37 button-collaps" onClick="showAccordeon('step7_production_cur_stand_few_01')" class="collapsible"><h3>&#8226; step7_production_cur_stand_few_01 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="step7_production_cur_stand_few_01">
+            <img class="pressClass" src="step7_production_cur_stand_few_01_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="step7_production_cur_stand_few_01_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="step7_production_cur_stand_few_01_plotDensity.png" class="densityClass" height="100%" width="50%">
+            <button class="button-37" onClick="showPlot('step7_production_cur_stand_few_01')">Interactive Plot</button>
+
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('step7_production_cur_stand_few_02_part0002')" class="collapsible"><h3>&#8226; step7_production_cur_stand_few_02.part0002 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="step7_production_cur_stand_few_02_part0002">
+            <img class="pressClass" src="step7_production_cur_stand_few_02.part0002_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="step7_production_cur_stand_few_02.part0002_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="step7_production_cur_stand_few_02.part0002_plotDensity.png" class="densityClass" height="100%" width="50%">
+            <button class="button-37" onClick="showPlot('step7_production_cur_stand_few_02.part0002')">Interactive Plot</button>
+
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('step7_production_cur_stand_few_03_part0003')" class="collapsible"><h3>&#8226; step7_production_cur_stand_few_03.part0003 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="step7_production_cur_stand_few_03_part0003">
+            <img class="pressClass" src="step7_production_cur_stand_few_03.part0003_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="step7_production_cur_stand_few_03.part0003_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="step7_production_cur_stand_few_03.part0003_plotDensity.png" class="densityClass" height="100%" width="50%">
+            <button class="button-37" onClick="showPlot('step7_production_cur_stand_few_03.part0003')">Interactive Plot</button>
+
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('step7_production_cur_stand_few_04_part0004')" class="collapsible"><h3>&#8226; step7_production_cur_stand_few_04.part0004 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="step7_production_cur_stand_few_04_part0004">
+            <img class="pressClass" src="step7_production_cur_stand_few_04.part0004_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="step7_production_cur_stand_few_04.part0004_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="step7_production_cur_stand_few_04.part0004_plotDensity.png" class="densityClass" height="100%" width="50%">
+            <button class="button-37" onClick="showPlot('step7_production_cur_stand_few_04.part0004')">Interactive Plot</button>
+
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('step7_production_cur_stand_few_05_part0005')" class="collapsible"><h3>&#8226; step7_production_cur_stand_few_05.part0005 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="step7_production_cur_stand_few_05_part0005">
+            <img class="pressClass" src="step7_production_cur_stand_few_05.part0005_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="step7_production_cur_stand_few_05.part0005_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="step7_production_cur_stand_few_05.part0005_plotDensity.png" class="densityClass" height="100%" width="50%">
+            <button class="button-37" onClick="showPlot('step7_production_cur_stand_few_05.part0005')">Interactive Plot</button>
+
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('step7_production_cur_stand_few_06_part0006')" class="collapsible"><h3>&#8226; step7_production_cur_stand_few_06.part0006 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="step7_production_cur_stand_few_06_part0006">
+            <img class="pressClass" src="step7_production_cur_stand_few_06.part0006_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="step7_production_cur_stand_few_06.part0006_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="step7_production_cur_stand_few_06.part0006_plotDensity.png" class="densityClass" height="100%" width="50%">
+            <button class="button-37" onClick="showPlot('step7_production_cur_stand_few_06.part0006')">Interactive Plot</button>
+
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('step7_production_cur_stand_few_07_part0007')" class="collapsible"><h3>&#8226; step7_production_cur_stand_few_07.part0007 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="step7_production_cur_stand_few_07_part0007">
+            <img class="pressClass" src="step7_production_cur_stand_few_07.part0007_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="step7_production_cur_stand_few_07.part0007_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="step7_production_cur_stand_few_07.part0007_plotDensity.png" class="densityClass" height="100%" width="50%">
+            <button class="button-37" onClick="showPlot('step7_production_cur_stand_few_07.part0007')">Interactive Plot</button>
+
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('step7_production_cur_stand_few_08_part0008')" class="collapsible"><h3>&#8226; step7_production_cur_stand_few_08.part0008 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="step7_production_cur_stand_few_08_part0008">
+            <img class="pressClass" src="step7_production_cur_stand_few_08.part0008_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="step7_production_cur_stand_few_08.part0008_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="step7_production_cur_stand_few_08.part0008_plotDensity.png" class="densityClass" height="100%" width="50%">
+            <button class="button-37" onClick="showPlot('step7_production_cur_stand_few_08.part0008')">Interactive Plot</button>
+
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('step7_production_cur_stand_few_09_part0009')" class="collapsible"><h3>&#8226; step7_production_cur_stand_few_09.part0009 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="step7_production_cur_stand_few_09_part0009">
+            <img class="pressClass" src="step7_production_cur_stand_few_09.part0009_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="step7_production_cur_stand_few_09.part0009_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="step7_production_cur_stand_few_09.part0009_plotDensity.png" class="densityClass" height="100%" width="50%">
+            <button class="button-37" onClick="showPlot('step7_production_cur_stand_few_09.part0009')">Interactive Plot</button>
+
+            </div>
+            <h2>Sumary all means</h2>
+        
+        <table>
+    <tr>
+        <th>Data File</th>
+        <th>Mean (mN/m)</th>
+
+    </tr>
+
+        
+    <tr>
+        <td>step7_production_cur_stand_few_01</td>
+        <td>     67.32+/-     10.49</td>
+    </tr>
+    
+    <tr>
+        <td>step7_production_cur_stand_few_02.part0002</td>
+        <td>     59.21+/-     21.38</td>
+    </tr>
+    
+    <tr>
+        <td>step7_production_cur_stand_few_03.part0003</td>
+        <td>     66.58+/-     15.94</td>
+    </tr>
+    
+    <tr>
+        <td>step7_production_cur_stand_few_04.part0004</td>
+        <td>     78.38+/-     28.82</td>
+    </tr>
+    
+    <tr>
+        <td>step7_production_cur_stand_few_05.part0005</td>
+        <td>     62.71+/-     16.74</td>
+    </tr>
+    
+    <tr>
+        <td>step7_production_cur_stand_few_06.part0006</td>
+        <td>     37.87+/-     16.24</td>
+    </tr>
+    
+    <tr>
+        <td>step7_production_cur_stand_few_07.part0007</td>
+        <td>    100.26+/-     17.68</td>
+    </tr>
+    
+    <tr>
+        <td>step7_production_cur_stand_few_08.part0008</td>
+        <td>    106.20+/-     20.40</td>
+    </tr>
+    
+    <tr>
+        <td>step7_production_cur_stand_few_09.part0009</td>
+        <td>     52.00+/-     21.73</td>
+    </tr>
+    </table> 
+        <h2>Mean of all steps</h2>
+        <p>File: Run_stand_fewketoMine</p>
+        <p>Mean all:      71.84+/-      4.15 mN/m; RollBack: 100</p>
+        <img class="pressClass" src="meanAllStepsMyPress_plotDataMyPress.png" height="100%">
+        <img class="energyClass" src="meanAllStepsMyPress_plotDataMyEnergy.png" height="100%"style="display: none">
+        <button class="button-37" onClick="showPlot('_withErr.csv')">Interactive Plot</button>
+
+    <button class="button-37" id="energyClick" onClick="showEnergy()">Energy</button><button class="button-37" id="pressureClick" onClick="showPress()">Pressure</button><button class="button-37" id="allClickShow2" onClick="collapseShowAll('showAll')">Show All</button><button class="button-37" id="allClickHide2" onClick="collapseShowAll('hideAll')" style="display:none">Hide All</button>
+                <h2> Box final stats </h2>
+                <p>Final Box: 66.13 x 68.06 x 150.00 A</p>
+                <p>Number of Lipids per layer: 40 </p>
+                <p>AreaPerLipid: 112.515 A2/molec </p>
+            </body></html>

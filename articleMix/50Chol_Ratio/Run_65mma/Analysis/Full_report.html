@@ -1,0 +1,694 @@
+<!DOCTYPE html><html><head><script src="https://3dmol.org/build/3Dmol.js"></script>
+<script type="text/javascript">
+  
+var urlHere = window.location.href;
+if ( urlHere.includes("Membrane-tests") ){
+   var urlPython = urlHere.split("Membrane-tests")[0]+"Membrane-tests/"
+} else if ( urlHere.includes("MD") ){
+  var urlPython = urlHere.split("MD")[0]+"MD/"
+}
+urlPython = urlPython + "Python_Files/webFormat/"
+var head  = document.getElementsByTagName('head')[0];
+    var link  = document.createElement('link');
+
+    link.rel  = 'stylesheet';
+    link.type = 'text/css';
+    link.href = urlPython+'myCss.css';
+    link.media = 'all';
+    head.appendChild(link);
+    
+    let scriptEle = document.createElement("script");
+    scriptEle.setAttribute("src", urlPython+'myFunctions.js');
+    scriptEle.setAttribute("type", 'text/javascript');
+    scriptEle.setAttribute("async", 'false');
+
+    head.appendChild(scriptEle);
+	console.log(urlPython+'myFunctions.js');
+    
+    </script>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head><body><h1>File Path: </h1>articleMix/50Chol_Ratio/Run_65mma <br>
+<button class="button-37" id="energyClick" onClick="showEnergy()">Energy</button><button class="button-37" id="pressureClick" onClick="showPress()">Pressure</button><button class="button-37" id="allClickShow2" onClick="collapseShowAll('showAll')">Show All</button><button class="button-37" id="allClickHide2" onClick="collapseShowAll('hideAll')" style="display:none">Hide All</button><h2>Number of lipids per leaf: </h2>total=192; CHL1=96; DPPC=96; <h2>Sumary all means</h2>
+        <h2>Mean of all steps</h2>
+        <p>File: Run_65mma50Chol_Ratio</p>
+        <p>Mean all:      78.05+/-      3.53 mN/mnum. files: 41; RollBack: 100</p>
+        <img class="pressClass" src="meanAllStepsMyPress_plotDataMyPress.png" height="100%">
+        <img class="energyClass" src="meanAllStepsMyPress_plotDataMyEnergy.png" height="100%"style="display: none">
+        <button class="button-37" onClick="showPlot('_withErr.csv')">Interactive Plot</button> 
+
+    <button class="button-37" id="energyClick" onClick="showEnergy()">Energy</button><button class="button-37" id="pressureClick" onClick="showPress()">Pressure</button>
+        <div id="summary">
+        <table>
+    <tr>
+        <th>Data File</th>
+        <th>Mean (mN/m)</th>
+
+    </tr>
+        
+    <tr>
+        <td class="files">step7_production_65mma_01</td>
+        <td>     88.47+/-      7.97</td>
+    </tr>
+    
+    <tr>
+        <td class="files">step7_production_65mma_02.part0002</td>
+        <td>     97.24+/-     12.93</td>
+    </tr>
+    
+    <tr>
+        <td class="files">step7_production_65mma_03.part0003</td>
+        <td>     85.56+/-     13.42</td>
+    </tr>
+    
+    <tr>
+        <td class="files">step7_production_65mma_04.part0004</td>
+        <td>     79.33+/-     13.30</td>
+    </tr>
+    
+    <tr>
+        <td class="files">step7_production_65mma_05.part0005</td>
+        <td>     76.27+/-     10.68</td>
+    </tr>
+    
+    <tr>
+        <td class="files">step7_production_65mma_06.part0006</td>
+        <td>     71.17+/-      9.60</td>
+    </tr>
+    
+    <tr>
+        <td class="files">step7_production_65mma_07.part0007</td>
+        <td>    100.13+/-      8.85</td>
+    </tr>
+    
+    <tr>
+        <td class="files">step7_production_65mma_08.part0008</td>
+        <td>     74.59+/-      8.26</td>
+    </tr>
+    
+    <tr>
+        <td class="files">step7_production_65mma_09.part0009</td>
+        <td>     67.61+/-     12.29</td>
+    </tr>
+    
+    <tr>
+        <td class="files">step7_production_65mma_10.part0010</td>
+        <td>     67.44+/-      8.83</td>
+    </tr>
+    
+    <tr>
+        <td class="files">step7_production_65mma_11.part0011</td>
+        <td>     65.12+/-     14.03</td>
+    </tr>
+    
+    <tr>
+        <td class="files">step7_production_65mma_12.part0012</td>
+        <td>     83.77+/-      9.22</td>
+    </tr>
+    
+    <tr>
+        <td class="files">step7_production_65mma_13.part0013</td>
+        <td>     81.38+/-     15.76</td>
+    </tr>
+    
+    <tr>
+        <td class="files">step7_production_65mma_14.part0014</td>
+        <td>     97.73+/-     12.97</td>
+    </tr>
+    
+    <tr>
+        <td class="files">step7_production_65mma_15.part0015</td>
+        <td>     87.14+/-     10.94</td>
+    </tr>
+    
+    <tr>
+        <td class="files">step7_production_65mma_16.part0016</td>
+        <td>     92.61+/-     13.65</td>
+    </tr>
+    
+    <tr>
+        <td class="files">step7_production_65mma_17.part0017</td>
+        <td>    105.08+/-     10.14</td>
+    </tr>
+    
+    <tr>
+        <td class="files">step7_production_65mma_18.part0018</td>
+        <td>     76.01+/-     12.07</td>
+    </tr>
+    
+    <tr>
+        <td class="files">step7_production_65mma_19.part0019</td>
+        <td>     88.97+/-     11.67</td>
+    </tr>
+    
+    <tr>
+        <td class="files">step7_production_65mma_20.part0020</td>
+        <td>     83.85+/-      8.57</td>
+    </tr>
+    
+    <tr>
+        <td class="files">step7_production_65mma_21.part0021</td>
+        <td>     67.90+/-     12.07</td>
+    </tr>
+    
+    <tr>
+        <td class="files">step7_production_65mma_22.part0022</td>
+        <td>     84.29+/-     13.37</td>
+    </tr>
+    
+    <tr>
+        <td class="files">step7_production_65mma_23.part0023</td>
+        <td>     90.90+/-     10.82</td>
+    </tr>
+    
+    <tr>
+        <td class="files">step7_production_65mma_24.part0024</td>
+        <td>     51.32+/-     15.66</td>
+    </tr>
+    
+    <tr>
+        <td class="files">step7_production_65mma_25.part0025</td>
+        <td>     72.52+/-     11.41</td>
+    </tr>
+    
+    <tr>
+        <td class="files">step7_production_65mma_26.part0026</td>
+        <td>     61.40+/-     11.58</td>
+    </tr>
+    
+    <tr>
+        <td class="files">step7_production_65mma_27.part0027</td>
+        <td>     70.49+/-     14.08</td>
+    </tr>
+    
+    <tr>
+        <td class="files">step7_production_65mma_28.part0028</td>
+        <td>     71.35+/-     10.51</td>
+    </tr>
+    
+    <tr>
+        <td class="files">step7_production_65mma_29.part0029</td>
+        <td>     91.78+/-     13.96</td>
+    </tr>
+    
+    <tr>
+        <td class="files">step7_production_65mma_30.part0030</td>
+        <td>     73.92+/-     13.36</td>
+    </tr>
+    
+    <tr>
+        <td class="files">step7_production_65mma_31.part0031</td>
+        <td>     98.30+/-      8.07</td>
+    </tr>
+    
+    <tr>
+        <td class="files">step7_production_65mma_32.part0032</td>
+        <td>     90.61+/-     10.54</td>
+    </tr>
+    
+    <tr>
+        <td class="files">step7_production_65mma_33.part0033</td>
+        <td>     77.73+/-     12.15</td>
+    </tr>
+    
+    <tr>
+        <td class="files">step7_production_65mma_34.part0034</td>
+        <td>     71.27+/-      8.95</td>
+    </tr>
+    
+    <tr>
+        <td class="files">step7_production_65mma_35.part0035</td>
+        <td>     74.53+/-     16.70</td>
+    </tr>
+    
+    <tr>
+        <td class="files">step7_production_65mma_36.part0036</td>
+        <td>     43.34+/-     13.49</td>
+    </tr>
+    
+    <tr>
+        <td class="files">step7_production_65mma_37.part0037</td>
+        <td>     77.29+/-     10.03</td>
+    </tr>
+    
+    <tr>
+        <td class="files">step7_production_65mma_38.part0038</td>
+        <td>     68.15+/-      4.78</td>
+    </tr>
+    
+    <tr>
+        <td class="files">step7_production_65mma_39.part0039</td>
+        <td>     79.98+/-      7.51</td>
+    </tr>
+    
+    <tr>
+        <td class="files">step7_production_65mma_40.part0040</td>
+        <td>     82.97+/-      8.73</td>
+    </tr>
+    
+    <tr>
+        <td class="files">step7_production_65mma_41.part0041</td>
+        <td>     69.83+/-      5.85</td>
+    </tr>
+    </table></div> 
+            
+            <div id="allPlots">
+                <div id="plotsTitle"></div>
+
+                <img id="allPlotsInner" src="" height="100%" >
+
+               <button class="button-37 molButtons" id="molDownPLot" onClick="plotDown()" > < </button>'
+               <button class="button-37 molButtons" id="molUpPlot" onClick="plotUp()"> > </button>'
+               <button class="button-37 molButtons" id="energyPlot" onClick="plotPress()"> Pressure </button>'
+               <button class="button-37 molButtons" id="energyPlot" onClick="plotEnergy()"> Energy </button>'
+               <button class="button-37 molButtons" id="densityPlot" onClick="plotDens()"> Density </button>'
+               <button class="button-37 molButtons" id="rdfPlot" onClick="plotRDF()"> RDF </button>'
+        
+            </div>
+            <div id='statsAndMol'>
+        <div id="finalStats">
+                <h2> Box final stats </h2>
+                <p>Final Box: 112.04 x 112.04 x 206.02 A</p>
+                <p>Number of Lipids per layer: 192 </p>
+                <p>AreaPerLipid: 65.384 A2/molec </p>
+                </div>
+            <button class="button-37" id="showMol" onClick="showMol()">Molecule</button><div id="molStuff"><button class="button-37 molButtons" id="unshowMol" onClick="hideMol()">Hidde</button><button class="button-37 molButtons" id="molDown" onClick="molDown()" > < </button><button class="button-37 molButtons" id="molUp" onClick="molUp()"> > </button><button class="button-37 molButtons" id="molRun" onClick="runMol()"> Run </button><div id="molName"> </div><div id='gldiv'></div>
+    <p id="molRef">
+    Nicholas Rego and David Koes <br>
+    3Dmol.js: molecular visualization with WebGL <br>
+    Bioinformatics (2015) 31 (8): 1322-1324 doi:10.1093/bioinformatics/btu829 <br>
+    </p>
+    </div></div><div id='fileAccordion'>
+    
+    
+            <button class="button-37 button-collaps" onClick="showAccordeon('step7_production_65mma_01')" class="collapsible"><h3>&#8226; step7_production_65mma_01 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="step7_production_65mma_01">
+            <img class="pressClass" src="step7_production_65mma_01_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="step7_production_65mma_01_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="step7_production_65mma_01_plotDensity.png" class="densityClass" height="100%" width="50%">
+            <button class="button-37" onClick="showPlot('step7_production_65mma_01')">Interactive Plot</button>
+
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('step7_production_65mma_02_part0002')" class="collapsible"><h3>&#8226; step7_production_65mma_02.part0002 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="step7_production_65mma_02_part0002">
+            <img class="pressClass" src="step7_production_65mma_02.part0002_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="step7_production_65mma_02.part0002_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="step7_production_65mma_02.part0002_plotDensity.png" class="densityClass" height="100%" width="50%">
+            <button class="button-37" onClick="showPlot('step7_production_65mma_02.part0002')">Interactive Plot</button>
+
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('step7_production_65mma_03_part0003')" class="collapsible"><h3>&#8226; step7_production_65mma_03.part0003 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="step7_production_65mma_03_part0003">
+            <img class="pressClass" src="step7_production_65mma_03.part0003_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="step7_production_65mma_03.part0003_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="step7_production_65mma_03.part0003_plotDensity.png" class="densityClass" height="100%" width="50%">
+            <button class="button-37" onClick="showPlot('step7_production_65mma_03.part0003')">Interactive Plot</button>
+
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('step7_production_65mma_04_part0004')" class="collapsible"><h3>&#8226; step7_production_65mma_04.part0004 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="step7_production_65mma_04_part0004">
+            <img class="pressClass" src="step7_production_65mma_04.part0004_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="step7_production_65mma_04.part0004_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="step7_production_65mma_04.part0004_plotDensity.png" class="densityClass" height="100%" width="50%">
+            <button class="button-37" onClick="showPlot('step7_production_65mma_04.part0004')">Interactive Plot</button>
+
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('step7_production_65mma_05_part0005')" class="collapsible"><h3>&#8226; step7_production_65mma_05.part0005 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="step7_production_65mma_05_part0005">
+            <img class="pressClass" src="step7_production_65mma_05.part0005_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="step7_production_65mma_05.part0005_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="step7_production_65mma_05.part0005_plotDensity.png" class="densityClass" height="100%" width="50%">
+            <button class="button-37" onClick="showPlot('step7_production_65mma_05.part0005')">Interactive Plot</button>
+
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('step7_production_65mma_06_part0006')" class="collapsible"><h3>&#8226; step7_production_65mma_06.part0006 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="step7_production_65mma_06_part0006">
+            <img class="pressClass" src="step7_production_65mma_06.part0006_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="step7_production_65mma_06.part0006_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="step7_production_65mma_06.part0006_plotDensity.png" class="densityClass" height="100%" width="50%">
+            <button class="button-37" onClick="showPlot('step7_production_65mma_06.part0006')">Interactive Plot</button>
+
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('step7_production_65mma_07_part0007')" class="collapsible"><h3>&#8226; step7_production_65mma_07.part0007 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="step7_production_65mma_07_part0007">
+            <img class="pressClass" src="step7_production_65mma_07.part0007_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="step7_production_65mma_07.part0007_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="step7_production_65mma_07.part0007_plotDensity.png" class="densityClass" height="100%" width="50%">
+            <button class="button-37" onClick="showPlot('step7_production_65mma_07.part0007')">Interactive Plot</button>
+
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('step7_production_65mma_08_part0008')" class="collapsible"><h3>&#8226; step7_production_65mma_08.part0008 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="step7_production_65mma_08_part0008">
+            <img class="pressClass" src="step7_production_65mma_08.part0008_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="step7_production_65mma_08.part0008_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="step7_production_65mma_08.part0008_plotDensity.png" class="densityClass" height="100%" width="50%">
+            <button class="button-37" onClick="showPlot('step7_production_65mma_08.part0008')">Interactive Plot</button>
+
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('step7_production_65mma_09_part0009')" class="collapsible"><h3>&#8226; step7_production_65mma_09.part0009 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="step7_production_65mma_09_part0009">
+            <img class="pressClass" src="step7_production_65mma_09.part0009_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="step7_production_65mma_09.part0009_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="step7_production_65mma_09.part0009_plotDensity.png" class="densityClass" height="100%" width="50%">
+            <button class="button-37" onClick="showPlot('step7_production_65mma_09.part0009')">Interactive Plot</button>
+
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('step7_production_65mma_10_part0010')" class="collapsible"><h3>&#8226; step7_production_65mma_10.part0010 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="step7_production_65mma_10_part0010">
+            <img class="pressClass" src="step7_production_65mma_10.part0010_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="step7_production_65mma_10.part0010_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="step7_production_65mma_10.part0010_plotDensity.png" class="densityClass" height="100%" width="50%">
+            <button class="button-37" onClick="showPlot('step7_production_65mma_10.part0010')">Interactive Plot</button>
+
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('step7_production_65mma_11_part0011')" class="collapsible"><h3>&#8226; step7_production_65mma_11.part0011 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="step7_production_65mma_11_part0011">
+            <img class="pressClass" src="step7_production_65mma_11.part0011_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="step7_production_65mma_11.part0011_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="step7_production_65mma_11.part0011_plotDensity.png" class="densityClass" height="100%" width="50%">
+            <button class="button-37" onClick="showPlot('step7_production_65mma_11.part0011')">Interactive Plot</button>
+
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('step7_production_65mma_12_part0012')" class="collapsible"><h3>&#8226; step7_production_65mma_12.part0012 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="step7_production_65mma_12_part0012">
+            <img class="pressClass" src="step7_production_65mma_12.part0012_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="step7_production_65mma_12.part0012_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="step7_production_65mma_12.part0012_plotDensity.png" class="densityClass" height="100%" width="50%">
+            <button class="button-37" onClick="showPlot('step7_production_65mma_12.part0012')">Interactive Plot</button>
+
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('step7_production_65mma_13_part0013')" class="collapsible"><h3>&#8226; step7_production_65mma_13.part0013 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="step7_production_65mma_13_part0013">
+            <img class="pressClass" src="step7_production_65mma_13.part0013_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="step7_production_65mma_13.part0013_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="step7_production_65mma_13.part0013_plotDensity.png" class="densityClass" height="100%" width="50%">
+            <button class="button-37" onClick="showPlot('step7_production_65mma_13.part0013')">Interactive Plot</button>
+
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('step7_production_65mma_14_part0014')" class="collapsible"><h3>&#8226; step7_production_65mma_14.part0014 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="step7_production_65mma_14_part0014">
+            <img class="pressClass" src="step7_production_65mma_14.part0014_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="step7_production_65mma_14.part0014_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="step7_production_65mma_14.part0014_plotDensity.png" class="densityClass" height="100%" width="50%">
+            <button class="button-37" onClick="showPlot('step7_production_65mma_14.part0014')">Interactive Plot</button>
+
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('step7_production_65mma_15_part0015')" class="collapsible"><h3>&#8226; step7_production_65mma_15.part0015 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="step7_production_65mma_15_part0015">
+            <img class="pressClass" src="step7_production_65mma_15.part0015_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="step7_production_65mma_15.part0015_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="step7_production_65mma_15.part0015_plotDensity.png" class="densityClass" height="100%" width="50%">
+            <button class="button-37" onClick="showPlot('step7_production_65mma_15.part0015')">Interactive Plot</button>
+
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('step7_production_65mma_16_part0016')" class="collapsible"><h3>&#8226; step7_production_65mma_16.part0016 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="step7_production_65mma_16_part0016">
+            <img class="pressClass" src="step7_production_65mma_16.part0016_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="step7_production_65mma_16.part0016_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="step7_production_65mma_16.part0016_plotDensity.png" class="densityClass" height="100%" width="50%">
+            <button class="button-37" onClick="showPlot('step7_production_65mma_16.part0016')">Interactive Plot</button>
+
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('step7_production_65mma_17_part0017')" class="collapsible"><h3>&#8226; step7_production_65mma_17.part0017 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="step7_production_65mma_17_part0017">
+            <img class="pressClass" src="step7_production_65mma_17.part0017_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="step7_production_65mma_17.part0017_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="step7_production_65mma_17.part0017_plotDensity.png" class="densityClass" height="100%" width="50%">
+            <button class="button-37" onClick="showPlot('step7_production_65mma_17.part0017')">Interactive Plot</button>
+
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('step7_production_65mma_18_part0018')" class="collapsible"><h3>&#8226; step7_production_65mma_18.part0018 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="step7_production_65mma_18_part0018">
+            <img class="pressClass" src="step7_production_65mma_18.part0018_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="step7_production_65mma_18.part0018_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="step7_production_65mma_18.part0018_plotDensity.png" class="densityClass" height="100%" width="50%">
+            <button class="button-37" onClick="showPlot('step7_production_65mma_18.part0018')">Interactive Plot</button>
+
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('step7_production_65mma_19_part0019')" class="collapsible"><h3>&#8226; step7_production_65mma_19.part0019 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="step7_production_65mma_19_part0019">
+            <img class="pressClass" src="step7_production_65mma_19.part0019_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="step7_production_65mma_19.part0019_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="step7_production_65mma_19.part0019_plotDensity.png" class="densityClass" height="100%" width="50%">
+            <button class="button-37" onClick="showPlot('step7_production_65mma_19.part0019')">Interactive Plot</button>
+
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('step7_production_65mma_20_part0020')" class="collapsible"><h3>&#8226; step7_production_65mma_20.part0020 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="step7_production_65mma_20_part0020">
+            <img class="pressClass" src="step7_production_65mma_20.part0020_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="step7_production_65mma_20.part0020_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="step7_production_65mma_20.part0020_plotDensity.png" class="densityClass" height="100%" width="50%">
+            <button class="button-37" onClick="showPlot('step7_production_65mma_20.part0020')">Interactive Plot</button>
+
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('step7_production_65mma_21_part0021')" class="collapsible"><h3>&#8226; step7_production_65mma_21.part0021 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="step7_production_65mma_21_part0021">
+            <img class="pressClass" src="step7_production_65mma_21.part0021_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="step7_production_65mma_21.part0021_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="step7_production_65mma_21.part0021_plotDensity.png" class="densityClass" height="100%" width="50%">
+            <button class="button-37" onClick="showPlot('step7_production_65mma_21.part0021')">Interactive Plot</button>
+
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('step7_production_65mma_22_part0022')" class="collapsible"><h3>&#8226; step7_production_65mma_22.part0022 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="step7_production_65mma_22_part0022">
+            <img class="pressClass" src="step7_production_65mma_22.part0022_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="step7_production_65mma_22.part0022_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="step7_production_65mma_22.part0022_plotDensity.png" class="densityClass" height="100%" width="50%">
+            <button class="button-37" onClick="showPlot('step7_production_65mma_22.part0022')">Interactive Plot</button>
+
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('step7_production_65mma_23_part0023')" class="collapsible"><h3>&#8226; step7_production_65mma_23.part0023 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="step7_production_65mma_23_part0023">
+            <img class="pressClass" src="step7_production_65mma_23.part0023_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="step7_production_65mma_23.part0023_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="step7_production_65mma_23.part0023_plotDensity.png" class="densityClass" height="100%" width="50%">
+            <button class="button-37" onClick="showPlot('step7_production_65mma_23.part0023')">Interactive Plot</button>
+
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('step7_production_65mma_24_part0024')" class="collapsible"><h3>&#8226; step7_production_65mma_24.part0024 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="step7_production_65mma_24_part0024">
+            <img class="pressClass" src="step7_production_65mma_24.part0024_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="step7_production_65mma_24.part0024_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="step7_production_65mma_24.part0024_plotDensity.png" class="densityClass" height="100%" width="50%">
+            <button class="button-37" onClick="showPlot('step7_production_65mma_24.part0024')">Interactive Plot</button>
+
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('step7_production_65mma_25_part0025')" class="collapsible"><h3>&#8226; step7_production_65mma_25.part0025 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="step7_production_65mma_25_part0025">
+            <img class="pressClass" src="step7_production_65mma_25.part0025_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="step7_production_65mma_25.part0025_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="step7_production_65mma_25.part0025_plotDensity.png" class="densityClass" height="100%" width="50%">
+            <button class="button-37" onClick="showPlot('step7_production_65mma_25.part0025')">Interactive Plot</button>
+
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('step7_production_65mma_26_part0026')" class="collapsible"><h3>&#8226; step7_production_65mma_26.part0026 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="step7_production_65mma_26_part0026">
+            <img class="pressClass" src="step7_production_65mma_26.part0026_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="step7_production_65mma_26.part0026_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="step7_production_65mma_26.part0026_plotDensity.png" class="densityClass" height="100%" width="50%">
+            <button class="button-37" onClick="showPlot('step7_production_65mma_26.part0026')">Interactive Plot</button>
+
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('step7_production_65mma_27_part0027')" class="collapsible"><h3>&#8226; step7_production_65mma_27.part0027 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="step7_production_65mma_27_part0027">
+            <img class="pressClass" src="step7_production_65mma_27.part0027_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="step7_production_65mma_27.part0027_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="step7_production_65mma_27.part0027_plotDensity.png" class="densityClass" height="100%" width="50%">
+            <button class="button-37" onClick="showPlot('step7_production_65mma_27.part0027')">Interactive Plot</button>
+
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('step7_production_65mma_28_part0028')" class="collapsible"><h3>&#8226; step7_production_65mma_28.part0028 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="step7_production_65mma_28_part0028">
+            <img class="pressClass" src="step7_production_65mma_28.part0028_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="step7_production_65mma_28.part0028_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="step7_production_65mma_28.part0028_plotDensity.png" class="densityClass" height="100%" width="50%">
+            <button class="button-37" onClick="showPlot('step7_production_65mma_28.part0028')">Interactive Plot</button>
+
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('step7_production_65mma_29_part0029')" class="collapsible"><h3>&#8226; step7_production_65mma_29.part0029 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="step7_production_65mma_29_part0029">
+            <img class="pressClass" src="step7_production_65mma_29.part0029_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="step7_production_65mma_29.part0029_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="step7_production_65mma_29.part0029_plotDensity.png" class="densityClass" height="100%" width="50%">
+            <button class="button-37" onClick="showPlot('step7_production_65mma_29.part0029')">Interactive Plot</button>
+
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('step7_production_65mma_30_part0030')" class="collapsible"><h3>&#8226; step7_production_65mma_30.part0030 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="step7_production_65mma_30_part0030">
+            <img class="pressClass" src="step7_production_65mma_30.part0030_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="step7_production_65mma_30.part0030_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="step7_production_65mma_30.part0030_plotDensity.png" class="densityClass" height="100%" width="50%">
+            <button class="button-37" onClick="showPlot('step7_production_65mma_30.part0030')">Interactive Plot</button>
+
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('step7_production_65mma_31_part0031')" class="collapsible"><h3>&#8226; step7_production_65mma_31.part0031 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="step7_production_65mma_31_part0031">
+            <img class="pressClass" src="step7_production_65mma_31.part0031_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="step7_production_65mma_31.part0031_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="step7_production_65mma_31.part0031_plotDensity.png" class="densityClass" height="100%" width="50%">
+            <button class="button-37" onClick="showPlot('step7_production_65mma_31.part0031')">Interactive Plot</button>
+
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('step7_production_65mma_32_part0032')" class="collapsible"><h3>&#8226; step7_production_65mma_32.part0032 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="step7_production_65mma_32_part0032">
+            <img class="pressClass" src="step7_production_65mma_32.part0032_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="step7_production_65mma_32.part0032_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="step7_production_65mma_32.part0032_plotDensity.png" class="densityClass" height="100%" width="50%">
+            <button class="button-37" onClick="showPlot('step7_production_65mma_32.part0032')">Interactive Plot</button>
+
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('step7_production_65mma_33_part0033')" class="collapsible"><h3>&#8226; step7_production_65mma_33.part0033 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="step7_production_65mma_33_part0033">
+            <img class="pressClass" src="step7_production_65mma_33.part0033_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="step7_production_65mma_33.part0033_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="step7_production_65mma_33.part0033_plotDensity.png" class="densityClass" height="100%" width="50%">
+            <button class="button-37" onClick="showPlot('step7_production_65mma_33.part0033')">Interactive Plot</button>
+
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('step7_production_65mma_34_part0034')" class="collapsible"><h3>&#8226; step7_production_65mma_34.part0034 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="step7_production_65mma_34_part0034">
+            <img class="pressClass" src="step7_production_65mma_34.part0034_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="step7_production_65mma_34.part0034_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="step7_production_65mma_34.part0034_plotDensity.png" class="densityClass" height="100%" width="50%">
+            <button class="button-37" onClick="showPlot('step7_production_65mma_34.part0034')">Interactive Plot</button>
+
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('step7_production_65mma_35_part0035')" class="collapsible"><h3>&#8226; step7_production_65mma_35.part0035 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="step7_production_65mma_35_part0035">
+            <img class="pressClass" src="step7_production_65mma_35.part0035_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="step7_production_65mma_35.part0035_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="step7_production_65mma_35.part0035_plotDensity.png" class="densityClass" height="100%" width="50%">
+            <button class="button-37" onClick="showPlot('step7_production_65mma_35.part0035')">Interactive Plot</button>
+
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('step7_production_65mma_36_part0036')" class="collapsible"><h3>&#8226; step7_production_65mma_36.part0036 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="step7_production_65mma_36_part0036">
+            <img class="pressClass" src="step7_production_65mma_36.part0036_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="step7_production_65mma_36.part0036_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="step7_production_65mma_36.part0036_plotDensity.png" class="densityClass" height="100%" width="50%">
+            <button class="button-37" onClick="showPlot('step7_production_65mma_36.part0036')">Interactive Plot</button>
+
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('step7_production_65mma_37_part0037')" class="collapsible"><h3>&#8226; step7_production_65mma_37.part0037 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="step7_production_65mma_37_part0037">
+            <img class="pressClass" src="step7_production_65mma_37.part0037_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="step7_production_65mma_37.part0037_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="step7_production_65mma_37.part0037_plotDensity.png" class="densityClass" height="100%" width="50%">
+            <button class="button-37" onClick="showPlot('step7_production_65mma_37.part0037')">Interactive Plot</button>
+
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('step7_production_65mma_38_part0038')" class="collapsible"><h3>&#8226; step7_production_65mma_38.part0038 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="step7_production_65mma_38_part0038">
+            <img class="pressClass" src="step7_production_65mma_38.part0038_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="step7_production_65mma_38.part0038_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="step7_production_65mma_38.part0038_plotDensity.png" class="densityClass" height="100%" width="50%">
+            <button class="button-37" onClick="showPlot('step7_production_65mma_38.part0038')">Interactive Plot</button>
+
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('step7_production_65mma_39_part0039')" class="collapsible"><h3>&#8226; step7_production_65mma_39.part0039 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="step7_production_65mma_39_part0039">
+            <img class="pressClass" src="step7_production_65mma_39.part0039_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="step7_production_65mma_39.part0039_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="step7_production_65mma_39.part0039_plotDensity.png" class="densityClass" height="100%" width="50%">
+            <button class="button-37" onClick="showPlot('step7_production_65mma_39.part0039')">Interactive Plot</button>
+
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('step7_production_65mma_40_part0040')" class="collapsible"><h3>&#8226; step7_production_65mma_40.part0040 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="step7_production_65mma_40_part0040">
+            <img class="pressClass" src="step7_production_65mma_40.part0040_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="step7_production_65mma_40.part0040_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="step7_production_65mma_40.part0040_plotDensity.png" class="densityClass" height="100%" width="50%">
+            <button class="button-37" onClick="showPlot('step7_production_65mma_40.part0040')">Interactive Plot</button>
+
+            </div>
+            
+            <button class="button-37 button-collaps" onClick="showAccordeon('step7_production_65mma_41_part0041')" class="collapsible"><h3>&#8226; step7_production_65mma_41.part0041 &#8226;</h3></button>
+            <div class="rowImages collapsible_content" id="step7_production_65mma_41_part0041">
+            <img class="pressClass" src="step7_production_65mma_41.part0041_plotDataMyPress.png" height="100%" >
+            <img class="energyClass" src="step7_production_65mma_41.part0041_plotDataMyEnergy.png" height="100%" style="display: none" >
+
+            <img src="step7_production_65mma_41.part0041_plotDensity.png" class="densityClass" height="100%" width="50%">
+            <button class="button-37" onClick="showPlot('step7_production_65mma_41.part0041')">Interactive Plot</button>
+
+            </div>
+            
+    </div><!-- End of accordion -->
+    </body></html>

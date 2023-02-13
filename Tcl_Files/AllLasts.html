@@ -1,0 +1,44 @@
+<!DOCTYPE html><html><head><script src="https://3dmol.org/build/3Dmol.js"></script>
+<script type="text/javascript">
+  
+var urlHere = window.location.href;
+if ( urlHere.includes("Membrane-tests") ){
+   var urlPython = urlHere.split("Membrane-tests")[0]+"Membrane-tests/"
+} else if ( urlHere.includes("MD") ){
+  var urlPython = urlHere.split("MD")[0]+"MD/"
+}
+urlPython = urlPython + "Python_Files/webFormat/"
+var head  = document.getElementsByTagName('head')[0];
+    var link  = document.createElement('link');
+
+    link.rel  = 'stylesheet';
+    link.type = 'text/css';
+    link.href = urlPython+'myCss.css';
+    link.media = 'all';
+    head.appendChild(link);
+    
+    let scriptEle = document.createElement("script");
+    scriptEle.setAttribute("src", urlPython+'myFunctionsFromInput.js');
+    scriptEle.setAttribute("type", 'text/javascript');
+    scriptEle.setAttribute("async", 'false');
+
+    head.appendChild(scriptEle);
+	console.log(urlPython+'myFunctionsFromInput.js');
+    
+    </script>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head><body>
+    
+    <h1> "Show all last from " </h1>
+    <textarea id="fname" name="fname"></textarea><br><br>
+            <button class="button-37" id="showMol" onClick="showMol()">Show</button><div id="molStuff"><button class="button-37 molButtons" id="unshowMol" onClick="hideMol()">Hidde</button><button class="button-37 molButtons" id="molDown" onClick="molDown()" > < </button><button class="button-37 molButtons" id="molUp" onClick="molUp()"> > </button><button class="button-37 molButtons" id="molRun" onClick="runMol()"> Run </button><div id="molName"> </div><div id='gldiv'></div>
+    <p id="molRef">
+    Nicholas Rego and David Koes <br>
+    3Dmol.js: molecular visualization with WebGL <br>
+    Bioinformatics (2015) 31 (8): 1322-1324 doi:10.1093/bioinformatics/btu829 <br>
+    </p>
+    
+    
+    
+    </div></div>
+    </body></html>
